@@ -1,0 +1,85 @@
+{% load i18n %}
+<form class="form" method="get">
+    {% include 'general/catalog/catalog_sort/form_filter.html' %}
+    <div class="form-group">
+        <div class="range Section-columnRange">
+            <input
+                    class="range-line"
+                    id="price"
+                    name="price"
+                    type="text"
+                    data-type="double"
+                    data-min="{{ price_range.min_price|safe }}"
+                    data-max="{{ price_range.max_price|safe }}"
+                    data-from="{{ price_min }}"
+                    data-to="{{ price_max }}"
+            >
+            <div class="range-price">{% trans "Цена" %}:&#32;
+                <div class="rangePrice">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <input class="form-input form-input_full" id="title" name="title" type="text" placeholder="{% trans "Название" %}" value="{{ request.GET.title }}"/>
+    </div>
+    <div class="form-group">
+        <!-- - var options = setOptions(items, ['value', 'selected', 'disabled']);-->
+    </div>
+
+    {% if properties %}
+        <div class="form-group">
+            <div class="form-group">
+                <label for="property">{% trans "Характеристика" %}:</label>
+                <select class="form-select" name="property" id="property">
+                    <option value="">Выберите</option>
+                    {% for property in properties %}
+
+                        <option value="{{ property }}" {% if property|escape == request.GET.property|escape %}selected{% endif %}>{{ property }}</option>
+                    {% endfor %}
+                </select>
+                <label for="property_values">{% trans "Значение характеристики" %}:</label>
+                <select class="form-select" name="property_values" id="property_values">
+                    <option value="">Выберите</option>
+                    {% for property_values in property_values %}
+                        <option value="{{ property_values }}" {% if property_values|escape == request.GET.property_values|escape %}selected{% endif %}>{{ property_values }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if attributes %}
+        <div class="form-group">
+            <div class="form-group">
+                <label for="attribute">{% trans "Атрибут" %}:</label>
+                <select class="form-select" name="attribute" id="attribute">
+                    <option value="">Выберите</option>
+                    {% for attribute in attributes %}
+                        <option value="{{ attribute }}" {% if attribute|escape == request.GET.attribute|escape %}selected{% endif %}>{{ attribute }}</option>
+                    {% endfor %}
+                </select>
+                <label for="attribute_values">{% trans "Значение атрибута" %}:</label>
+                <select class="form-select" name="attribute_values" id="attribute_values">
+                    <option value="">Выберите</option>
+                    {% for attribute_value in attribute_values %}
+                        <option value="{{ attribute_value }}" {% if attribute_value|escape == request.GET.attribute_values|escape %}selected{% endif %}>{{ attribute_value }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="form-group">
+        <label class="toggle" for="is_stock">
+            <input type="checkbox" name="is_stock" id="is_stock" {% if request.GET.is_stock == "on" %}checked{% endif %}/>
+            <span class="toggle-box"></span>
+            <span class="toggle-text">{% trans "Только товары в наличии" %}</span>
+        </label>
+    </div>
+    <div class="form-group">
+        <div class="buttons">
+            <button class="btn btn_square btn_dark btn_narrow" type="submit">{% trans "Применить фильтр" %}</button>
+        </div>
+    </div>
+</form>

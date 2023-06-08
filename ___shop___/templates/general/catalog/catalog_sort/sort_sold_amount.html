@@ -1,0 +1,16 @@
+{% load i18n %}
+{% if sort|length > 0 and sort == "sold_amount" %}
+    {% if sort_dir|length > 0 %}
+        <a class="Sort-sortBy Sort-sortBy_dec" href="{% url 'shop:catalog' %}{{ category_link }}?sort=sold_amount&sort_dir={{ sort_query }}">
+            {% trans "Популярности" %}
+        </a>
+    {% else %}
+        <a class="Sort-sortBy Sort-sortBy_inc" href="{% url 'shop:catalog' %}{{ category_link }}?sort=sold_amount&sort_dir=-{{ sort_query }}">
+            {% trans "Популярности" %}
+        </a>
+    {% endif %}
+{% else %}
+    <a class="Sort-sortBy" href="{% url 'shop:catalog' %}{{ category_link }}?sort=sold_amount&sort_dir={{ sort_query }}">
+        {% trans "Популярности" %}
+    </a>
+{% endif %}

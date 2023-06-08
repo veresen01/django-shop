@@ -1,0 +1,50 @@
+{% load i18n %}
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% include 'general/errors/form_error.html' with errors=form.non_field_errors %}
+
+    <div class="form-group">
+        E-mail: {{ form.email }}
+        {% include 'general/errors/form_error.html' with errors=form.email.errors %}
+    </div>
+
+    <div class="form-group">
+        {% trans "Пароль" %}: {{ form.password1 }}
+        {% include 'general/errors/form_error.html' with errors=form.password1.errors %}
+    </div>
+
+    <div class="form-group">
+        {% trans "Повторите пароль" %}: {{ form.password2 }}
+        {% include 'general/errors/form_error.html' with errors=form.password2.errors %}
+    </div>
+
+    <div class="form-group">
+        {% trans "Имя" %}: {{ form.full_name }}
+        {% include 'general/errors/form_error.html' with errors=form.full_name.errors %}
+    </div>
+
+    <div class="form-group">
+        {% trans "Телефон" %}:
+        {{ form.phoneNumber }}
+        {% include 'general/errors/form_error.html' with errors=form.phoneNumber.errors %}
+    </div>
+
+    <div class="form-group">
+        {% trans "Аватар" %}: {{ form.avatar }}
+        {% include 'general/errors/form_error.html' with errors=form.avatar.errors %}
+    </div>
+
+    {#    <div class="form-group">#}
+    {#        <div class="error-message">#}
+    {#            {{ form.captcha.errors }}#}
+    {#        </div>#}
+    {#        {% trans "Решите капчу" %}: {{ num1 }} + {{ num2 }} = ? {{ form.captcha }}#}
+    {#    </div>#}
+
+    <div class="form-group total-center">
+        <button class="btn btn_primary margin-auto">{% trans "Регистрация" %}</button>
+    </div>
+
+    <hr>
+    <a class="ControlPanel-title" href="{% url 'users:login' %}">{% trans "У меня уже есть аккаунт" %}</a>
+</form>

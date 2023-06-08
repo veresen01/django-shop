@@ -1,0 +1,85 @@
+{% extends 'base_template/base_template.html' %}
+{% load i18n %}
+{% block content %}
+    {% include 'general/account/navigation.html' %}
+    <div class="Section-content">
+        <div class="Orders">
+            {% for order in orders %}
+                <div class="Order Order_anons">
+                    <div class="Order-personal">
+                        <div class="row">
+                            <div class="row-block">
+                                <a class="Order-title" href="{% url 'orders:order_detail' order.id %}">
+                                    Заказ&#32;<span class="Order-numberOrder">№{{ order.id }}</span>&#32;{% trans "от" %}&#32;
+                                    <span class="Order-dateOrder">
+                                        {{ order.create_at|date:"d.m.Y H:i:s" }}
+                                    </span></a>
+                            </div>
+                            <div class="row-block">
+                                <div class="Order-info Order-info_delivery">
+                                    <div class="Order-infoType">{% trans "Способ доставки" %}:
+                                    </div>
+                                    <div class="Order-infoContent">
+                                        {{ order.method_delivery.title }}
+                                    </div>
+                                </div>
+                                <div class="Order-info Order-info_pay">
+                                    <div class="Order-infoType">{% trans "Способ оплаты" %}:
+                                    </div>
+                                    <div class="Order-infoContent">
+                                        {{ order.method_payment.title }}
+                                    </div>
+                                </div>
+                                <div class="Order-info">
+                                    <div class="Order-infoType">{% trans "Стоимость товаров" %}:
+                                    </div>
+                                    <div class="Order-infoContent">
+                                        <span class="Order-price">{{ order.get_total_price|floatformat:2 }}$</span>
+                                    </div>
+                                </div>
+                                <div class="Order-info">
+                                    <div class="Order-infoType">{% trans "Стоимость доставки" %}:
+                                    </div>
+                                    <div class="Order-infoContent">
+                                        <span class="Order-price">{{ order.get_delivery_price|floatformat:2 }}$</span>
+                                    </div>
+                                </div>
+                                <div class="Order-info">
+                                    <div class="Order-infoType">{% trans "Общая стоимость" %}:
+                                    </div>
+                                    <div class="Order-infoContent">
+                                        <span class="Order-price">{{ order.get_price_with_delivery|floatformat:2 }}$</span>
+                                    </div>
+                                </div>
+                                <div class="Order-info Order-info_status">
+                                    <div class="Order-infoType">Статус оплаты:
+                                    </div>
+                                    <div class="Order-infoContent">
+                                        {% if order.payment_at %}
+                                            {{ order.payment_status.title }} ({{ order.payment_at|date:"d.m.Y H:i:s" }})
+                                        {% else %}
+                                            {% trans "Не оплачен" %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                {% if not order.payment_at %}
+                                    <div class="Order-info Order-info_error">
+                                        <div class="Order-infoType">{% trans "Оплата не прошла" %}:
+                                        </div>
+                                        <div class="Order-infoContent">
+                                            {{ order.payment_status.title }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                {% trans "Вы еще не успели ничего заказать" %}
+            {% endfor %}
+        </div>
+
+    </div>
+{% endblock %}

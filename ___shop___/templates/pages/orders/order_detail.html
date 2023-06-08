@@ -1,0 +1,201 @@
+{% extends 'base_template/base_template.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+    {% if order %}
+        <div class="Section-content">
+            <div class="Orders">
+            </div>
+            <div class="Order">
+                <div class="Order-infoBlock">
+                    <div class="Order-personal">
+                        <div class="row">
+                            <div class="row-block">
+                                <div class="Order-info Order-info_date">
+                                    <div class="Order-infoType">{% trans "Дата заказа" %}:
+                                    </div>
+                                    <div class="Order-infoContent">
+                                        {{ order.create_at|date:"d.m.Y H:i:s" }}
+                                    </div>
+                                </div>
+                                <div class="Order-info">
+                                    <div class="Order-infoType">{% trans "Полное имя" %}:
+                                    </div>
+                                    <div class="Order-infoContent">
+                                        {{ order.user.full_name }}
+                                    </div>
+                                </div>
+                                <div class="Order-info">
+                                    <div class="Order-infoType">{% trans "Телефон" %}:
+                                    </div>
+                                    <div class="Order-infoContent">
+                                        {{ order.user.phoneNumber }}
+                                    </div>
+                                </div>
+                                <div class="Order-info">
+                                    <div class="Order-infoType">E-mail:
+                                    </div>
+                                    <div class="Order-infoContent">
+                                        {{ order.user.email }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-block">
+                                <div class="Order-info Order-info_delivery">
+                                    <div class="Order-infoType">{% trans "Способ доставки" %}:
+                                    </div>
+                                    <div class="Order-infoContent">
+                                        {{ order.method_delivery.title }}
+                                    </div>
+                                </div>
+                                <div class="Order-info">
+                                    <div class="Order-infoType">{% trans "Город" %}:
+                                    </div>
+                                    <div class="Order-infoContent">
+                                        {{ order.city }}
+                                    </div>
+                                </div>
+                                <div class="Order-info">
+                                    <div class="Order-infoType">{% trans "Адрес" %}:
+                                    </div>
+                                    <div class="Order-infoContent">
+                                        {{ order.address }}
+                                    </div>
+                                </div>
+                                <div class="Order-info Order-info_pay">
+                                    <div class="Order-infoType">{% trans "Способ оплаты" %}:
+                                    </div>
+                                    <div class="Order-infoContent">
+                                        {{ order.method_payment.title }}
+                                    </div>
+                                </div>
+                                <div class="Order-info Order-info_status">
+                                    <div class="Order-infoType">Статус оплаты:
+                                    </div>
+                                    <div class="Order-infoContent">
+                                        {% if order.payment_at %}
+                                            {{ order.payment_status.title }} ({{ order.payment_at|date:"d.m.Y H:i:s" }})
+                                        {% else %}
+                                            {% trans "Не оплачен" %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                {% if not order.payment_at %}
+                                    <div class="Order-info Order-info_error">
+                                        <div class="Order-infoType">{% trans "Оплата не прошла" %}:
+                                        </div>
+                                        <div class="Order-infoContent">
+                                            {{ order.payment_status.title }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="Cart Cart_order">
+
+                        {% for item in order.order.all %}
+                            {% with product=item.product %}
+                                {% url 'product:product_detail' product.id as link_product_detail %}
+
+                                <div class="Cart-product">
+                                    <div class="Cart-block Cart-block_row">
+                                        <div class="Cart-block Cart-block_pict">
+                                            <a class="Cart-pict" href="{{ link_product_detail }}">
+                                                {% if product.product_image.all|length > 0 %}
+                                                    <img class="Cart-img" src="{% get_media_prefix %}{{ product.product_image.all.0.image }}" alt="{{ product.title }}"/>
+                                                {% else %}
+                                                    {% trans "Нет изображения" %}
+                                                {% endif %}
+                                            </a>
+                                        </div>
+                                        <div class="Cart-block Cart-block_info">
+                                            <a class="Cart-title" href="{{ link_product_detail }}">
+                                                {{ product.title }}
+                                            </a>
+                                            <div class="Cart-desc">
+                                                {{ product.description|safe }}
+                                            </div>
+                                        </div>
+                                        <div class="Cart-block Cart-block_price">
+                                            <div class="Cart-price">
+                                                {{ item.product_price|floatformat:2 }}$
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="Cart-block Cart-block_row">
+                                        <div class="Cart-block Cart-block_amount">
+                                            {{ item.product_amount }} шт.
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endwith %}
+                        {% empty %}
+                            <header class="Section-header Section-header_product">
+                                <h3 class="Section-title">
+                                    {% trans "Корзина пуста" %}
+                                </h3>
+                            </header>
+                        {% endfor %}
+
+                        <header class="Section-header Section-header_product">
+                            <h3 class="Section-title">
+                                {% trans "Стоимость доставки" %}
+                            </h3>
+                        </header>
+
+                        <div class="Cart Cart_order">
+                            <div class="Cart-product">
+                                <div class="Cart-block Cart-block_row">
+                                    <div class="Cart-block Cart-block_info font-weight-bolder" id="delivery_title">
+                                        {{ order.method_delivery.title }}
+                                    </div>
+                                    <div class="form-error" id="delivery_description">
+                                        {% blocktrans with desc=order.method_delivery.get_desc %}
+                                            {{ desc }}
+                                        {% endblocktrans %}
+                                    </div>
+                                </div>
+                                <div class="Cart-block Cart-block_row">
+                                    <div class="Cart-block Cart-block_amount" id="delivery_price">
+                                        {{ order.get_delivery_price|floatformat:2 }}$
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="Cart-total">
+                            <div class="Cart-block Cart-block_total">
+                                <strong class="Cart-title">{% trans "Итого" %}:
+                                </strong><span class="Cart-price" id="total-price">
+                                {{ order.get_price_with_delivery|floatformat:2 }}$</span>
+                            </div>
+                            {% if not order.payment_at %}
+                                <div class="Cart-block">
+                                    <a class="btn btn_primary btn_lg" href="{% url 'orders:order_detail_payment' order.id %}">{% trans "Оплатить" %}
+                                    </a>
+                                </div>
+                                <div class="Cart-block">
+                                    <button type="submit" class="btn btn_danger btn_lg" onclick="cancel_order({{ order.id }})">{% trans "Отменить заказ" %}
+                                    </button>
+                                </div>
+                            {% endif %}
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <header class="Section-header Section-header_product">
+            <h3 class="Section-title">
+                {% trans "Такого заказа не существует" %}
+            </h3>
+        </header>
+    {% endif %}
+{% endblock %}

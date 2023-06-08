@@ -1,0 +1,23 @@
+{% extends 'base_template/base_template.html' %}
+{% load i18n %}
+{% block content %}
+    <div class="total-center">
+        <div class="margin-auto">
+
+            {% if request.user.is_authenticated %}
+                {% if settings.access_to_auth_when_auth %}
+                    {% include 'forms/signup_form.html' %}
+                {% else %}
+                    <header class="Section-header Section-header_product">
+                        <h3 class="Section-title">
+                            {% trans "Вы уже зарегистрированы и авторизованы" %}
+                        </h3>
+                    </header>
+                {% endif %}
+            {% else %}
+                {% include 'forms/signup_form.html' %}
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

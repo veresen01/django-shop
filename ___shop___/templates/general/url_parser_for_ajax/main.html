@@ -1,0 +1,22 @@
+{#Получение URL для добавления товара в корзину#}
+{% url 'cart:add_product' as ajax_cart_add_product %} {{ ajax_cart_add_product|json_script:'url_ajax_cart_add_product' }}
+
+{#Получение URL для обновления данных корзины в шапке#}
+{% url 'cart:update_cart' as ajax_cart_update %} {{ ajax_cart_update|json_script:'url_ajax_cart_update' }}
+
+{#Получение URL для обновления количество товара в корзине#}
+{% url 'cart:update_product_amount' as ajax_update_product_amount %} {{ ajax_update_product_amount|json_script:'url_ajax_update_product_amount' }}
+
+{#Получение URL для удаления товара из корзины#}
+{% url 'cart:remove_product' as ajax_remove_product %} {{ ajax_remove_product|json_script:'url_ajax_remove_product' }}
+
+{#Получение URL для создания заказа#}
+{% url 'orders:create_order' as ajax_create_order %} {{ ajax_create_order|json_script:'url_ajax_create_order' }}
+
+{#Получение URL для отмены заказа#}
+{% url 'orders:cancel_order' as ajax_cancel_order %} {{ ajax_cancel_order|json_script:'url_ajax_cancel_order' }}
+
+{#Получение настроек в JS#}
+{{ settings.order_delivery_limit|json_script:'order_delivery_limit' }}
+{{ settings.order_delivery_price|json_script:'order_delivery_price' }}
+{{ settings.order_delivery_express|json_script:'order_delivery_express' }}

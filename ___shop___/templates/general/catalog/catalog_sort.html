@@ -1,0 +1,15 @@
+{% load i18n %}
+<div class="Sort">
+    <div class="Sort-title">
+        {% trans "Сортировать по" %}:
+    </div>
+
+    <div class="Sort-variants">
+
+{#        {% include 'general/catalog/catalog_sort/sort_sold_amount.html' %}#}
+{#        {% include 'general/catalog/catalog_sort/sort_price.html' %}#}
+{#        {% include 'general/catalog/catalog_sort/sort_reviews.html' %}#}
+{#        {% include 'general/catalog/catalog_sort/sort_create_at.html' %}#}
+        {{ filter.form.ordering }}
+    </div>
+</div>

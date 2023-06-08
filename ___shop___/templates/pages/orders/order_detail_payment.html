@@ -1,0 +1,22 @@
+{% extends 'base_template/base_template.html' %}
+{% block content %}
+{#    <div>#}
+{#        {{ order }}#}
+{#    </div>#}
+{#    <div>#}
+{#        {{ order.method_payment }}#}
+{#    </div>#}
+{#    <div>#}
+{#        {{ order.method_payment.id }}#}
+{#    </div>#}
+    {% if order.payment_status.id == 1 or order.payment_status.id == 4 or order.payment_status.id == 5 or order.payment_status.id == 6 %}
+        {% if order.method_payment.id == 1 %}
+            {% include 'pages/orders/order_payment_1.html' %}
+        {% endif %}
+        {% if order.method_payment.id == 2 %}
+            {% include 'pages/orders/order_payment_2.html' %}
+        {% endif %}
+    {% else %}
+        Пшелнах
+    {% endif %}
+{% endblock %}

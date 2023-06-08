@@ -1,0 +1,1896 @@
+[
+  {
+    "model": "auth.group",
+    "fields": {
+      "name": "Пользователи",
+      "permissions": []
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "5jnwzem5fmsmmmzmdoifn7vf54czk11o",
+    "fields": {
+      "session_data": ".eJxVjDsOgzAQBe-ydWT5E2ObMn3OgNbeJZBEtmRDhbh7gkRD-2bmbZCwLtBv-w0GXJdpWBvXYSbowcJli5g-nA9Ab8yvIlLJS52jOBRx0iaehfj7ON3LwYRt-tc6MXm8J22CJ5TGevKSZcesLGJ0ymo_utEprVm55GWURmGnWHfWhECw_wAtlDq4:1pFHHg:ccl7wCsg-I7D_Vk09lPPPjCg6bFWL2u9hQkFj33mq0E",
+      "expire_date": "2023-01-24T16:15:32.673Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "c4za4fz7tf6s7lqf29voe5vqwdw8sazq",
+    "fields": {
+      "session_data": ".eJx1zDsOgzAMgOG7eEZRXhDC2L1nQM6rpK1CG8JQIe5eqFgYunjw_9kLWMwFugXkPt4zphLLBzpWwStH66EDWRMKawXsr-A_sZEe5zL08-RzH90WGJx2Bu3Dpz24O6bbSOyYSo6G7IQcdSLX0fnn5bCnBwNOw3atgnXaO4lKuIYG2igRjGxRU-2FMK1CTqlhjgtrZVvTwALnijNGpVZC17B-AamRTb8:1pE9Z1:bcU-sON2tDgrsdxLFGwLbQo8cBV8v5E49OTSBAO9yQQ",
+      "expire_date": "2023-01-21T13:48:47.698Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "s09vb5rihvzahh5n3o7kf8r6df8a837a",
+    "fields": {
+      "session_data": ".eJx1zLsOgkAQBdB_mZps9gkspb3fQGZfsmoWhaUwhH8XlMRQ2Exx77kzg8UhQzOD3M5zwpRjfkHDCngM0XpoQCpCYSmA_RV8F-Io-E8w-hX8r1AfsZIWp9y10-iHNrptCofMoL35tBXuiunSE9unPERDNkL2diTn3vn7abeHBx2O3bqualR1kEJZyXwQxnNKtam5Rco5xbVVJYbgXOBUOaqd00EbXSrDQikqAcsbbxNiQQ:1pDmIL:fPFrmEUjwvoxq7ZcOIQTxfUxf7p0Oqa9BH2QrIbplk4",
+      "expire_date": "2023-01-20T12:58:01.769Z"
+    }
+  },
+  {
+    "model": "app_users.user",
+    "fields": {
+      "password": "pbkdf2_sha256$390000$DkzyOkzapwn9XGrYrZbM7v$rfzXN6XKAQ9J2k5O1wnKrZ1IVC5gm7r9Cs9z4k07htI=",
+      "last_login": "2023-01-10T16:15:32.670Z",
+      "is_superuser": true,
+      "email": "megano@megano.com",
+      "full_name": "Админский Админ",
+      "date_joined": "2023-01-07T16:51:00.300Z",
+      "is_active": true,
+      "avatar_file": "images/user_avatars/Без_названия_XQuv0bw.jpg",
+      "phoneNumber": "8005553535",
+      "is_staff": true,
+      "groups": [
+        [
+          "Пользователи"
+        ]
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "app_users.user",
+    "fields": {
+      "password": "pbkdf2_sha256$390000$1PcxZwWT88uCnrtY51VbSt$tI3Xt7gpmlGyqaNwUkw5kPi+ascGmvtx+Qi3Tu6JFdA=",
+      "last_login": "2023-01-07T16:52:20.405Z",
+      "is_superuser": false,
+      "email": "endocrinologist@ya.ru",
+      "full_name": "Путин Владимир",
+      "date_joined": "2023-01-07T16:52:20.189Z",
+      "is_active": true,
+      "avatar_file": "",
+      "phoneNumber": "9033334031",
+      "is_staff": false,
+      "groups": [
+        [
+          "Пользователи"
+        ]
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "app_users.user",
+    "fields": {
+      "password": "pbkdf2_sha256$390000$I7IReAPqtAI0GlItfEc7Oq$oKNaQB34/9lSRPHUMmDUGawrkFCFNEkS7iwoIga1wJo=",
+      "last_login": "2023-01-08T12:56:55.534Z",
+      "is_superuser": false,
+      "email": "alex_vovkin@mail.ru",
+      "full_name": "213123",
+      "date_joined": "2023-01-08T12:56:55.292Z",
+      "is_active": true,
+      "avatar_file": "",
+      "phoneNumber": "2131231231",
+      "is_staff": false,
+      "groups": [
+        [
+          "Пользователи"
+        ]
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "app_product.category",
+    "pk": 1,
+    "fields": {
+      "title": "Accessories",
+      "parent": null,
+      "icon": "images/category_icons/1.svg",
+      "image": "images/category_images/videoca.png",
+      "active": true,
+      "favourite": true,
+      "sort_index": 0,
+      "lft": 112,
+      "rght": 1,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "app_product.category",
+    "pk": 2,
+    "fields": {
+      "title": "Bags",
+      "parent": null,
+      "icon": "images/category_icons/2.svg",
+      "image": "",
+      "active": true,
+      "favourite": false,
+      "sort_index": 0,
+      "lft": 112,
+      "rght": 1,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "app_product.category",
+    "pk": 3,
+    "fields": {
+      "title": "Cameras",
+      "parent": null,
+      "icon": "images/category_icons/3.svg",
+      "image": "",
+      "active": true,
+      "favourite": false,
+      "sort_index": 0,
+      "lft": 112,
+      "rght": 1,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "app_product.category",
+    "pk": 4,
+    "fields": {
+      "title": "Accessories",
+      "parent": 3,
+      "icon": "images/category_icons/1_Ah7nG1S.svg",
+      "image": "",
+      "active": true,
+      "favourite": false,
+      "sort_index": 0,
+      "lft": 112,
+      "rght": 1,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "app_product.category",
+    "pk": 5,
+    "fields": {
+      "title": "Bags",
+      "parent": 3,
+      "icon": "images/category_icons/2_hgJ7zgL.svg",
+      "image": "",
+      "active": true,
+      "favourite": false,
+      "sort_index": 0,
+      "lft": 112,
+      "rght": 1,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "app_product.category",
+    "pk": 6,
+    "fields": {
+      "title": "Clothings",
+      "parent": null,
+      "icon": "images/category_icons/4.svg",
+      "image": "images/category_images/card.jpg",
+      "active": true,
+      "favourite": true,
+      "sort_index": 0,
+      "lft": 112,
+      "rght": 1,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "app_product.category",
+    "pk": 7,
+    "fields": {
+      "title": "Electronics",
+      "parent": null,
+      "icon": "images/category_icons/5.svg",
+      "image": "",
+      "active": true,
+      "favourite": false,
+      "sort_index": 0,
+      "lft": 112,
+      "rght": 1,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "app_product.category",
+    "pk": 8,
+    "fields": {
+      "title": "Fashion",
+      "parent": null,
+      "icon": "images/category_icons/6.svg",
+      "image": "",
+      "active": true,
+      "favourite": false,
+      "sort_index": 0,
+      "lft": 112,
+      "rght": 1,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "app_product.category",
+    "pk": 9,
+    "fields": {
+      "title": "Furniture",
+      "parent": null,
+      "icon": "images/category_icons/7.svg",
+      "image": "",
+      "active": true,
+      "favourite": false,
+      "sort_index": 0,
+      "lft": 112,
+      "rght": 1,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "app_product.category",
+    "pk": 10,
+    "fields": {
+      "title": "Accessories",
+      "parent": 9,
+      "icon": "images/category_icons/1_xvKHWL1.svg",
+      "image": "",
+      "active": true,
+      "favourite": false,
+      "sort_index": 0,
+      "lft": 112,
+      "rght": 1,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "app_product.category",
+    "pk": 11,
+    "fields": {
+      "title": "Bags",
+      "parent": 9,
+      "icon": "images/category_icons/2_btHbROm.svg",
+      "image": "",
+      "active": true,
+      "favourite": false,
+      "sort_index": 0,
+      "lft": 112,
+      "rght": 1,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "app_product.category",
+    "pk": 12,
+    "fields": {
+      "title": "Lightings",
+      "parent": null,
+      "icon": "images/category_icons/8.svg",
+      "image": "images/category_images/bigGoods.png",
+      "active": true,
+      "favourite": true,
+      "sort_index": 0,
+      "lft": 112,
+      "rght": 1,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "app_product.category",
+    "pk": 13,
+    "fields": {
+      "title": "Mobiles",
+      "parent": null,
+      "icon": "images/category_icons/9.svg",
+      "image": "",
+      "active": true,
+      "favourite": false,
+      "sort_index": 0,
+      "lft": 112,
+      "rght": 1,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "app_product.category",
+    "pk": 14,
+    "fields": {
+      "title": "Trends",
+      "parent": null,
+      "icon": "images/category_icons/10.svg",
+      "image": "",
+      "active": true,
+      "favourite": false,
+      "sort_index": 0,
+      "lft": 112,
+      "rght": 1,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "app_product.category",
+    "pk": 15,
+    "fields": {
+      "title": "More",
+      "parent": null,
+      "icon": "images/category_icons/11.svg",
+      "image": "",
+      "active": true,
+      "favourite": false,
+      "sort_index": 1,
+      "lft": 112,
+      "rght": 1,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "app_product.category",
+    "pk": 16,
+    "fields": {
+      "title": "Accessories",
+      "parent": 15,
+      "icon": "images/category_icons/1_4bXQTdS.svg",
+      "image": "",
+      "active": true,
+      "favourite": false,
+      "sort_index": 0,
+      "lft": 112,
+      "rght": 1,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "app_product.category",
+    "pk": 17,
+    "fields": {
+      "title": "Bags",
+      "parent": 15,
+      "icon": "images/category_icons/2_hku61kF.svg",
+      "image": "",
+      "active": true,
+      "favourite": false,
+      "sort_index": 0,
+      "lft": 112,
+      "rght": 1,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "app_product.category",
+    "pk": 18,
+    "fields": {
+      "title": "Lightings",
+      "parent": null,
+      "icon": "images/category_icons/12.svg",
+      "image": "",
+      "active": true,
+      "favourite": false,
+      "sort_index": 0,
+      "lft": 112,
+      "rght": 1,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "app_product.category",
+    "pk": 19,
+    "fields": {
+      "title": "Inactive",
+      "parent": null,
+      "icon": "",
+      "image": "",
+      "active": false,
+      "favourite": false,
+      "sort_index": 0,
+      "lft": 112,
+      "rght": 1,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "app_product.category",
+    "pk": 20,
+    "fields": {
+      "title": "Subinactive",
+      "parent": 19,
+      "icon": "images/category_icons/10_RnjvMlL.svg",
+      "image": "",
+      "active": true,
+      "favourite": false,
+      "sort_index": 0,
+      "lft": 112,
+      "rght": 1,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "app_product.product",
+    "pk": 1,
+    "fields": {
+      "title": "Notebook Ноутбук",
+      "category": 1,
+      "description": "<ul>\r\n                  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod\r\n                  </li>\r\n                  <li>tempor incididunt ut labore et dolore magna aliqua. Lorem\r\n                  </li>\r\n                  <li>ipsum dolor sit ameabore et dolore magna aliqua. Lorem ipsum\r\n                  </li>\r\n                </ul>",
+      "description_detailed": "<h2>Megano Store Hystory\r\n                </h2>\r\n                <p>Lorem ipsum dolor sit amet, consectetuer \r\n                  <strong>adipiscing\r\n                  </strong> elit doli. Aenean commodo ligula eget dolor. Aenean massa. <a href=\"#\">Cumtipsu</a> sociis natoque penatibus et magnis dis parturient montesti, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eutu, pretiumem.\r\n                </p>\r\n                <ul>\r\n                  <li>Lorem ipsum dolor sit amet, consectetuer\r\n                  </li>\r\n                  <li>adipiscing elit doli. <em>Aenean</em> commodo ligula\r\n                  </li>\r\n                  <li>eget dolor. Aenean massa. Cumtipsu sociis\r\n                  </li>\r\n                  <li>natoque penatibus et magnis dis parturient\r\n                  </li>\r\n                  <li>montesti, nascetur ridiculus mus. Donec\r\n                  </li>\r\n                  <li>quam felis, ultricies nec, pellentesque eutu\r\n                  </li>\r\n                </ul>",
+      "price": 500.0,
+      "remains": 3,
+      "active": true,
+      "sorting_index": 0,
+      "limited_edition": true,
+      "sold_amount": 30,
+      "add_at": "2023-01-05T10:44:01.868Z"
+    }
+  },
+  {
+    "model": "app_product.product",
+    "pk": 2,
+    "fields": {
+      "title": "Videocard Видеокарта",
+      "category": 2,
+      "description": "<ul>\r\n                  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod\r\n                  </li>\r\n                  <li>tempor incididunt ut labore et dolore magna aliqua. Lorem\r\n                  </li>\r\n                  <li>ipsum dolor sit ameabore et dolore magna aliqua. Lorem ipsum\r\n                  </li>\r\n                </ul>",
+      "description_detailed": "<h2>Megano Store Hystory\r\n                </h2>\r\n                <p>Lorem ipsum dolor sit amet, consectetuer \r\n                  <strong>adipiscing\r\n                  </strong> elit doli. Aenean commodo ligula eget dolor. Aenean massa. <a href=\"#\">Cumtipsu</a> sociis natoque penatibus et magnis dis parturient montesti, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eutu, pretiumem.\r\n                </p>\r\n                <ul>\r\n                  <li>Lorem ipsum dolor sit amet, consectetuer\r\n                  </li>\r\n                  <li>adipiscing elit doli. <em>Aenean</em> commodo ligula\r\n                  </li>\r\n                  <li>eget dolor. Aenean massa. Cumtipsu sociis\r\n                  </li>\r\n                  <li>natoque penatibus et magnis dis parturient\r\n                  </li>\r\n                  <li>montesti, nascetur ridiculus mus. Donec\r\n                  </li>\r\n                  <li>quam felis, ultricies nec, pellentesque eutu\r\n                  </li>\r\n                </ul>",
+      "price": 50.0,
+      "remains": 7,
+      "active": true,
+      "sorting_index": 0,
+      "limited_edition": false,
+      "sold_amount": 10,
+      "add_at": "2023-01-05T11:06:49.506Z"
+    }
+  },
+  {
+    "model": "app_product.product",
+    "pk": 3,
+    "fields": {
+      "title": "Notebook mouse Ноутбуковая мышь",
+      "category": 3,
+      "description": "<ul>\r\n                  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod\r\n                  </li>\r\n                  <li>tempor incididunt ut labore et dolore magna aliqua. Lorem\r\n                  </li>\r\n                  <li>ipsum dolor sit ameabore et dolore magna aliqua. Lorem ipsum\r\n                  </li>\r\n                </ul>",
+      "description_detailed": "<h2>Megano Store Hystory\r\n                </h2>\r\n                <p>Lorem ipsum dolor sit amet, consectetuer \r\n                  <strong>adipiscing\r\n                  </strong> elit doli. Aenean commodo ligula eget dolor. Aenean massa. <a href=\"#\">Cumtipsu</a> sociis natoque penatibus et magnis dis parturient montesti, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eutu, pretiumem.\r\n                </p>\r\n                <ul>\r\n                  <li>Lorem ipsum dolor sit amet, consectetuer\r\n                  </li>\r\n                  <li>adipiscing elit doli. <em>Aenean</em> commodo ligula\r\n                  </li>\r\n                  <li>eget dolor. Aenean massa. Cumtipsu sociis\r\n                  </li>\r\n                  <li>natoque penatibus et magnis dis parturient\r\n                  </li>\r\n                  <li>montesti, nascetur ridiculus mus. Donec\r\n                  </li>\r\n                  <li>quam felis, ultricies nec, pellentesque eutu\r\n                  </li>\r\n                </ul>",
+      "price": 10.0,
+      "remains": 18,
+      "active": true,
+      "sorting_index": 0,
+      "limited_edition": false,
+      "sold_amount": 20,
+      "add_at": "2023-01-05T11:14:13.275Z"
+    }
+  },
+  {
+    "model": "app_product.product",
+    "pk": 4,
+    "fields": {
+      "title": "Keyboard Клавиатура",
+      "category": 6,
+      "description": "<ul>\r\n                  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod\r\n                  </li>\r\n                  <li>tempor incididunt ut labore et dolore magna aliqua. Lorem\r\n                  </li>\r\n                  <li>ipsum dolor sit ameabore et dolore magna aliqua. Lorem ipsum\r\n                  </li>\r\n                </ul>",
+      "description_detailed": "<h2>Megano Store Hystory\r\n                </h2>\r\n                <p>Lorem ipsum dolor sit amet, consectetuer \r\n                  <strong>adipiscing\r\n                  </strong> elit doli. Aenean commodo ligula eget dolor. Aenean massa. <a href=\"#\">Cumtipsu</a> sociis natoque penatibus et magnis dis parturient montesti, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eutu, pretiumem.\r\n                </p>\r\n                <ul>\r\n                  <li>Lorem ipsum dolor sit amet, consectetuer\r\n                  </li>\r\n                  <li>adipiscing elit doli. <em>Aenean</em> commodo ligula\r\n                  </li>\r\n                  <li>eget dolor. Aenean massa. Cumtipsu sociis\r\n                  </li>\r\n                  <li>natoque penatibus et magnis dis parturient\r\n                  </li>\r\n                  <li>montesti, nascetur ridiculus mus. Donec\r\n                  </li>\r\n                  <li>quam felis, ultricies nec, pellentesque eutu\r\n                  </li>\r\n                </ul>",
+      "price": 45.0,
+      "remains": 0,
+      "active": true,
+      "sorting_index": 0,
+      "limited_edition": true,
+      "sold_amount": 40,
+      "add_at": "2023-01-06T10:18:26.613Z"
+    }
+  },
+  {
+    "model": "app_product.product",
+    "pk": 5,
+    "fields": {
+      "title": "Lamp Лапочка",
+      "category": 12,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
+      "description_detailed": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+      "price": 5.0,
+      "remains": 0,
+      "active": true,
+      "sorting_index": 0,
+      "limited_edition": false,
+      "sold_amount": 0,
+      "add_at": "2023-01-07T13:23:27.489Z"
+    }
+  },
+  {
+    "model": "app_product.product",
+    "pk": 6,
+    "fields": {
+      "title": "Beauty notebook Красивый ноутбук",
+      "category": 1,
+      "description": "Lorem ipsum dolor sit amet",
+      "description_detailed": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
+      "price": 30.0,
+      "remains": 7,
+      "active": true,
+      "sorting_index": 0,
+      "limited_edition": true,
+      "sold_amount": 0,
+      "add_at": "2023-01-07T13:27:26.766Z"
+    }
+  },
+  {
+    "model": "app_product.productimages",
+    "pk": 1,
+    "fields": {
+      "product": 1,
+      "image": "images/products/bigGoods_bvQ8Bku.png"
+    }
+  },
+  {
+    "model": "app_product.productimages",
+    "pk": 2,
+    "fields": {
+      "product": 1,
+      "image": "images/products/slider_2ehFZJl.png"
+    }
+  },
+  {
+    "model": "app_product.productimages",
+    "pk": 3,
+    "fields": {
+      "product": 1,
+      "image": "images/products/videoca_G6olsxB.png"
+    }
+  },
+  {
+    "model": "app_product.productimages",
+    "pk": 4,
+    "fields": {
+      "product": 2,
+      "image": "images/products/videoca_G6olsxB_mF5blr4.png"
+    }
+  },
+  {
+    "model": "app_product.productimages",
+    "pk": 5,
+    "fields": {
+      "product": 2,
+      "image": "images/products/bigGoods_F1Xi7x4_24YrhaR.png"
+    }
+  },
+  {
+    "model": "app_product.productimages",
+    "pk": 6,
+    "fields": {
+      "product": 3,
+      "image": "images/products/slider_4OFHwKy.png"
+    }
+  },
+  {
+    "model": "app_product.productimages",
+    "pk": 7,
+    "fields": {
+      "product": 4,
+      "image": "images/products/1233791_XivZIyy.jpg"
+    }
+  },
+  {
+    "model": "app_product.productimages",
+    "pk": 8,
+    "fields": {
+      "product": 6,
+      "image": "images/products/bigGoods_gOZg1yr.png"
+    }
+  },
+  {
+    "model": "app_product.property",
+    "pk": 1,
+    "fields": {
+      "property": 1,
+      "value": 1,
+      "product": 1
+    }
+  },
+  {
+    "model": "app_product.property",
+    "pk": 2,
+    "fields": {
+      "property": 2,
+      "value": 3,
+      "product": 1
+    }
+  },
+  {
+    "model": "app_product.property",
+    "pk": 3,
+    "fields": {
+      "property": 3,
+      "value": 2,
+      "product": 1
+    }
+  },
+  {
+    "model": "app_product.property",
+    "pk": 4,
+    "fields": {
+      "property": 4,
+      "value": 4,
+      "product": 1
+    }
+  },
+  {
+    "model": "app_product.property",
+    "pk": 5,
+    "fields": {
+      "property": 1,
+      "value": 5,
+      "product": 4
+    }
+  },
+  {
+    "model": "app_product.propertyname",
+    "pk": 1,
+    "fields": {
+      "name": "Цвет"
+    }
+  },
+  {
+    "model": "app_product.propertyname",
+    "pk": 2,
+    "fields": {
+      "name": "Длина, см"
+    }
+  },
+  {
+    "model": "app_product.propertyname",
+    "pk": 3,
+    "fields": {
+      "name": "Ширина, см"
+    }
+  },
+  {
+    "model": "app_product.propertyname",
+    "pk": 4,
+    "fields": {
+      "name": "Высота, см"
+    }
+  },
+  {
+    "model": "app_product.propertyvalue",
+    "pk": 1,
+    "fields": {
+      "value": "Белый"
+    }
+  },
+  {
+    "model": "app_product.propertyvalue",
+    "pk": 2,
+    "fields": {
+      "value": "25"
+    }
+  },
+  {
+    "model": "app_product.propertyvalue",
+    "pk": 3,
+    "fields": {
+      "value": "30"
+    }
+  },
+  {
+    "model": "app_product.propertyvalue",
+    "pk": 4,
+    "fields": {
+      "value": "5"
+    }
+  },
+  {
+    "model": "app_product.propertyvalue",
+    "pk": 5,
+    "fields": {
+      "value": "Черный"
+    }
+  },
+  {
+    "model": "app_product.propertyvalue",
+    "pk": 6,
+    "fields": {
+      "value": "Синий"
+    }
+  },
+  {
+    "model": "app_product.attribute",
+    "pk": 1,
+    "fields": {
+      "attribute": 1,
+      "value": 1,
+      "product": 1
+    }
+  },
+  {
+    "model": "app_product.attribute",
+    "pk": 2,
+    "fields": {
+      "attribute": 2,
+      "value": 2,
+      "product": 1
+    }
+  },
+  {
+    "model": "app_product.attribute",
+    "pk": 3,
+    "fields": {
+      "attribute": 3,
+      "value": 3,
+      "product": 1
+    }
+  },
+  {
+    "model": "app_product.attribute",
+    "pk": 4,
+    "fields": {
+      "attribute": 4,
+      "value": 4,
+      "product": 1
+    }
+  },
+  {
+    "model": "app_product.attribute",
+    "pk": 5,
+    "fields": {
+      "attribute": 1,
+      "value": 5,
+      "product": 4
+    }
+  },
+  {
+    "model": "app_product.attribute",
+    "pk": 6,
+    "fields": {
+      "attribute": 2,
+      "value": 6,
+      "product": 4
+    }
+  },
+  {
+    "model": "app_product.attribute",
+    "pk": 7,
+    "fields": {
+      "attribute": 3,
+      "value": 7,
+      "product": 4
+    }
+  },
+  {
+    "model": "app_product.attribute",
+    "pk": 8,
+    "fields": {
+      "attribute": 4,
+      "value": 8,
+      "product": 4
+    }
+  },
+  {
+    "model": "app_product.attributename",
+    "pk": 1,
+    "fields": {
+      "name": "Страна"
+    }
+  },
+  {
+    "model": "app_product.attributename",
+    "pk": 2,
+    "fields": {
+      "name": "Производитель"
+    }
+  },
+  {
+    "model": "app_product.attributename",
+    "pk": 3,
+    "fields": {
+      "name": "Срок гарантии"
+    }
+  },
+  {
+    "model": "app_product.attributename",
+    "pk": 4,
+    "fields": {
+      "name": "Дата производства"
+    }
+  },
+  {
+    "model": "app_product.attributevalue",
+    "pk": 1,
+    "fields": {
+      "value": "Тайвань"
+    }
+  },
+  {
+    "model": "app_product.attributevalue",
+    "pk": 2,
+    "fields": {
+      "value": "Xiaomi"
+    }
+  },
+  {
+    "model": "app_product.attributevalue",
+    "pk": 3,
+    "fields": {
+      "value": "24 месяца"
+    }
+  },
+  {
+    "model": "app_product.attributevalue",
+    "pk": 4,
+    "fields": {
+      "value": "06/2019"
+    }
+  },
+  {
+    "model": "app_product.attributevalue",
+    "pk": 5,
+    "fields": {
+      "value": "Китай"
+    }
+  },
+  {
+    "model": "app_product.attributevalue",
+    "pk": 6,
+    "fields": {
+      "value": "OKCLICK"
+    }
+  },
+  {
+    "model": "app_product.attributevalue",
+    "pk": 7,
+    "fields": {
+      "value": "6 месяцев"
+    }
+  },
+  {
+    "model": "app_product.attributevalue",
+    "pk": 8,
+    "fields": {
+      "value": "08/2021"
+    }
+  },
+  {
+    "model": "app_product.historyproduct",
+    "pk": 1,
+    "fields": {
+      "user": [
+        "megano@megano.com"
+      ],
+      "product": 4
+    }
+  },
+  {
+    "model": "app_product.historyproduct",
+    "pk": 2,
+    "fields": {
+      "user": [
+        "megano@megano.com"
+      ],
+      "product": 1
+    }
+  },
+  {
+    "model": "app_orders.order",
+    "pk": 9,
+    "fields": {
+      "user": [
+        "megano@megano.com"
+      ],
+      "create_at": "2023-01-10T22:22:07.990Z",
+      "method_payment": 1,
+      "method_delivery": 1,
+      "payment_status": 3,
+      "payment_at": "2023-01-10T22:27:34.851Z",
+      "city": "123123",
+      "address": "123123123"
+    }
+  },
+  {
+    "model": "app_orders.order",
+    "pk": 10,
+    "fields": {
+      "user": [
+        "megano@megano.com"
+      ],
+      "create_at": "2023-01-10T22:30:50.330Z",
+      "method_payment": 2,
+      "method_delivery": 2,
+      "payment_status": 3,
+      "payment_at": "2023-01-10T22:51:08.342Z",
+      "city": "wdwd",
+      "address": "wdwdw"
+    }
+  },
+  {
+    "model": "app_orders.order",
+    "pk": 11,
+    "fields": {
+      "user": [
+        "megano@megano.com"
+      ],
+      "create_at": "2023-01-10T22:51:59.214Z",
+      "method_payment": 1,
+      "method_delivery": 2,
+      "payment_status": 4,
+      "payment_at": null,
+      "city": "efefe",
+      "address": "grgegg"
+    }
+  },
+  {
+    "model": "app_orders.orderitems",
+    "pk": 33,
+    "fields": {
+      "order": 9,
+      "product": 4,
+      "product_amount": 1,
+      "product_price": 45.0
+    }
+  },
+  {
+    "model": "app_orders.orderitems",
+    "pk": 34,
+    "fields": {
+      "order": 9,
+      "product": 1,
+      "product_amount": 1,
+      "product_price": 500.0
+    }
+  },
+  {
+    "model": "app_orders.orderitems",
+    "pk": 35,
+    "fields": {
+      "order": 9,
+      "product": 3,
+      "product_amount": 1,
+      "product_price": 10.0
+    }
+  },
+  {
+    "model": "app_orders.orderitems",
+    "pk": 36,
+    "fields": {
+      "order": 9,
+      "product": 2,
+      "product_amount": 1,
+      "product_price": 50.0
+    }
+  },
+  {
+    "model": "app_orders.orderitems",
+    "pk": 37,
+    "fields": {
+      "order": 9,
+      "product": 6,
+      "product_amount": 1,
+      "product_price": 30.0
+    }
+  },
+  {
+    "model": "app_orders.orderitems",
+    "pk": 38,
+    "fields": {
+      "order": 10,
+      "product": 1,
+      "product_amount": 4,
+      "product_price": 500.0
+    }
+  },
+  {
+    "model": "app_orders.orderitems",
+    "pk": 39,
+    "fields": {
+      "order": 11,
+      "product": 1,
+      "product_amount": 1,
+      "product_price": 500.0
+    }
+  },
+  {
+    "model": "app_orders.orderitems",
+    "pk": 40,
+    "fields": {
+      "order": 11,
+      "product": 2,
+      "product_amount": 1,
+      "product_price": 50.0
+    }
+  },
+  {
+    "model": "app_orders.orderitems",
+    "pk": 41,
+    "fields": {
+      "order": 11,
+      "product": 6,
+      "product_amount": 1,
+      "product_price": 30.0
+    }
+  },
+  {
+    "model": "app_orders.paymentmethod",
+    "pk": 1,
+    "fields": {
+      "title": "Онлайн картой"
+    }
+  },
+  {
+    "model": "app_orders.paymentmethod",
+    "pk": 2,
+    "fields": {
+      "title": "Онлайн со случайного чужого счёта"
+    }
+  },
+  {
+    "model": "app_orders.deliverymethod",
+    "pk": 1,
+    "fields": {
+      "title": "Обычная доставка",
+      "description": "Доставка бесплатная, если сумма заказа от {DELIVERY_LIMIT}$. Если сумма заказа меньше, то стоимость доставки {DELIVERY_PRICE}$."
+    }
+  },
+  {
+    "model": "app_orders.deliverymethod",
+    "pk": 2,
+    "fields": {
+      "title": "Экспресс-доставка",
+      "description": "Любая сумма заказа. Стоимость {DELIVERY_EXPRESS_PRICE}$"
+    }
+  },
+  {
+    "model": "app_orders.paymentstatuses",
+    "pk": 1,
+    "fields": {
+      "title": "Ожидает оплаты",
+      "priority": 0
+    }
+  },
+  {
+    "model": "app_orders.paymentstatuses",
+    "pk": 2,
+    "fields": {
+      "title": "В процессе",
+      "priority": 1
+    }
+  },
+  {
+    "model": "app_orders.paymentstatuses",
+    "pk": 3,
+    "fields": {
+      "title": "Оплачено",
+      "priority": 2
+    }
+  },
+  {
+    "model": "app_orders.paymentstatuses",
+    "pk": 4,
+    "fields": {
+      "title": "Недостаточно средств для оплаты",
+      "priority": 3
+    }
+  },
+  {
+    "model": "app_orders.paymentstatuses",
+    "pk": 5,
+    "fields": {
+      "title": "Ошибка оплаты заказа",
+      "priority": 4
+    }
+  },
+  {
+    "model": "app_orders.paymentstatuses",
+    "pk": 6,
+    "fields": {
+      "title": "Ошибка на стороне банка",
+      "priority": 5
+    }
+  },
+  {
+    "model": "app_settings.sitesettings",
+    "pk": 1,
+    "fields": {
+      "order_delivery_limit": 2000,
+      "order_delivery_price": 200,
+      "order_delivery_express": 500,
+      "access_to_auth_when_auth": true,
+      "avatar_image_max_size_mb": 2.0,
+      "popular_product_amount": 3,
+      "product_page_amount": 2
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 40,
+    "fields": {
+      "action_time": "2023-01-07T16:51:41.386Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_users",
+        "user"
+      ],
+      "object_id": "5",
+      "object_repr": "megano@megano.com (Админский Админ)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Groups\", \"\\u041f\\u043e\\u043b\\u043d\\u043e\\u0435 \\u0438\\u043c\\u044f\", \"\\u0410\\u0432\\u0430\\u0442\\u0430\\u0440\", \"\\u0422\\u0435\\u043b\\u0435\\u0444\\u043e\\u043d\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 41,
+    "fields": {
+      "action_time": "2023-01-07T16:56:42.848Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "category"
+      ],
+      "object_id": "12",
+      "object_repr": "Lightings",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u0431\\u0440\\u0430\\u043d\\u043d\\u043e\\u0435\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 42,
+    "fields": {
+      "action_time": "2023-01-07T16:57:21.735Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "category"
+      ],
+      "object_id": "12",
+      "object_repr": "Lightings",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0441\\u044b\\u043b\\u043a\\u0430 \\u043d\\u0430 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 43,
+    "fields": {
+      "action_time": "2023-01-07T16:57:33.658Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "category"
+      ],
+      "object_id": "6",
+      "object_repr": "Clothings",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0441\\u044b\\u043b\\u043a\\u0430 \\u043d\\u0430 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"\\u0418\\u0437\\u0431\\u0440\\u0430\\u043d\\u043d\\u043e\\u0435\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 44,
+    "fields": {
+      "action_time": "2023-01-07T16:57:52.049Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "category"
+      ],
+      "object_id": "1",
+      "object_repr": "Accessories",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0441\\u044b\\u043b\\u043a\\u0430 \\u043d\\u0430 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"\\u0418\\u0437\\u0431\\u0440\\u0430\\u043d\\u043d\\u043e\\u0435\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+      "action_time": "2023-01-07T17:24:43.114Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "product"
+      ],
+      "object_id": "5",
+      "object_repr": "Lamp Лапочка - 5.0$",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u0430\\u0442\\u0435\\u0433\\u043e\\u0440\\u0438\\u044f\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+      "action_time": "2023-01-07T17:25:44.012Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "product"
+      ],
+      "object_id": "5",
+      "object_repr": "Lamp Лапочка - 5.0$",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u0430\\u0442\\u0435\\u0433\\u043e\\u0440\\u0438\\u044f\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+      "action_time": "2023-01-07T17:43:26.034Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_settings",
+        "sitesettings"
+      ],
+      "object_id": "1",
+      "object_repr": "SiteSettings object (1)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u043e\\u043b\\u0438\\u0447\\u0435\\u0441\\u0442\\u0432\\u043e \\u043f\\u043e\\u043f\\u0443\\u043b\\u044f\\u0440\\u043d\\u044b\\u0445 \\u0442\\u043e\\u0432\\u0430\\u0440\\u043e\\u0432 \\u043d\\u0430 \\u0433\\u043b\\u0430\\u0432\\u043d\\u043e\\u0439\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+      "action_time": "2023-01-07T17:50:10.914Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "category"
+      ],
+      "object_id": "15",
+      "object_repr": "More",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043d\\u0434\\u0435\\u043a\\u0441 \\u0441\\u043e\\u0440\\u0442\\u0438\\u0440\\u043e\\u0432\\u043a\\u0438\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 49,
+    "fields": {
+      "action_time": "2023-01-07T17:55:10.389Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "product"
+      ],
+      "object_id": "4",
+      "object_repr": "Keyboard Клавиатура - 45.0$",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u0433\\u0440\\u0430\\u043d\\u0438\\u0447\\u0435\\u043d\\u043d\\u044b\\u0439 \\u0442\\u0438\\u0440\\u0430\\u0436\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 50,
+    "fields": {
+      "action_time": "2023-01-07T17:55:14.203Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "product"
+      ],
+      "object_id": "1",
+      "object_repr": "Notebook Ноутбук - 25.0$",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u0433\\u0440\\u0430\\u043d\\u0438\\u0447\\u0435\\u043d\\u043d\\u044b\\u0439 \\u0442\\u0438\\u0440\\u0430\\u0436\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 51,
+    "fields": {
+      "action_time": "2023-01-07T17:55:18.300Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "product"
+      ],
+      "object_id": "6",
+      "object_repr": "Beauty notebook Красивый ноутбук - 30.0$",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u0433\\u0440\\u0430\\u043d\\u0438\\u0447\\u0435\\u043d\\u043d\\u044b\\u0439 \\u0442\\u0438\\u0440\\u0430\\u0436\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 52,
+    "fields": {
+      "action_time": "2023-01-08T07:16:51.733Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "category"
+      ],
+      "object_id": "1",
+      "object_repr": "Accessories",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043a\\u043e\\u043d\\u043a\\u0430 SVG\", \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 53,
+    "fields": {
+      "action_time": "2023-01-08T07:17:54.331Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "category"
+      ],
+      "object_id": "2",
+      "object_repr": "Bags",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043a\\u043e\\u043d\\u043a\\u0430 SVG\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 54,
+    "fields": {
+      "action_time": "2023-01-08T07:18:00.947Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "category"
+      ],
+      "object_id": "3",
+      "object_repr": "Cameras",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043a\\u043e\\u043d\\u043a\\u0430 SVG\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 55,
+    "fields": {
+      "action_time": "2023-01-08T07:18:06.344Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "category"
+      ],
+      "object_id": "4",
+      "object_repr": "Cameras -> Accessories",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043a\\u043e\\u043d\\u043a\\u0430 SVG\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 56,
+    "fields": {
+      "action_time": "2023-01-08T07:18:11.108Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "category"
+      ],
+      "object_id": "5",
+      "object_repr": "Cameras -> Bags",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043a\\u043e\\u043d\\u043a\\u0430 SVG\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 57,
+    "fields": {
+      "action_time": "2023-01-08T07:18:29.695Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "category"
+      ],
+      "object_id": "6",
+      "object_repr": "Clothings",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043a\\u043e\\u043d\\u043a\\u0430 SVG\", \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 58,
+    "fields": {
+      "action_time": "2023-01-08T07:18:38.823Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "category"
+      ],
+      "object_id": "7",
+      "object_repr": "Electronics",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043a\\u043e\\u043d\\u043a\\u0430 SVG\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 59,
+    "fields": {
+      "action_time": "2023-01-08T07:18:44.379Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "category"
+      ],
+      "object_id": "8",
+      "object_repr": "Fashion",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043a\\u043e\\u043d\\u043a\\u0430 SVG\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 60,
+    "fields": {
+      "action_time": "2023-01-08T07:18:49.355Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "category"
+      ],
+      "object_id": "9",
+      "object_repr": "Furniture",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043a\\u043e\\u043d\\u043a\\u0430 SVG\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 61,
+    "fields": {
+      "action_time": "2023-01-08T07:18:53.568Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "category"
+      ],
+      "object_id": "10",
+      "object_repr": "Furniture -> Accessories",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043a\\u043e\\u043d\\u043a\\u0430 SVG\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 62,
+    "fields": {
+      "action_time": "2023-01-08T07:18:57.521Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "category"
+      ],
+      "object_id": "11",
+      "object_repr": "Furniture -> Bags",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043a\\u043e\\u043d\\u043a\\u0430 SVG\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 63,
+    "fields": {
+      "action_time": "2023-01-08T07:19:09.104Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "category"
+      ],
+      "object_id": "12",
+      "object_repr": "Lightings",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043a\\u043e\\u043d\\u043a\\u0430 SVG\", \"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 64,
+    "fields": {
+      "action_time": "2023-01-08T07:19:18.762Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "category"
+      ],
+      "object_id": "13",
+      "object_repr": "Mobiles",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043a\\u043e\\u043d\\u043a\\u0430 SVG\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 65,
+    "fields": {
+      "action_time": "2023-01-08T07:19:23.756Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "category"
+      ],
+      "object_id": "14",
+      "object_repr": "Trends",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043a\\u043e\\u043d\\u043a\\u0430 SVG\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 66,
+    "fields": {
+      "action_time": "2023-01-08T07:19:31.770Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "category"
+      ],
+      "object_id": "16",
+      "object_repr": "More -> Accessories",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043a\\u043e\\u043d\\u043a\\u0430 SVG\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 67,
+    "fields": {
+      "action_time": "2023-01-08T07:19:36.037Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "category"
+      ],
+      "object_id": "17",
+      "object_repr": "More -> Bags",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043a\\u043e\\u043d\\u043a\\u0430 SVG\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 68,
+    "fields": {
+      "action_time": "2023-01-08T07:19:41.208Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "category"
+      ],
+      "object_id": "18",
+      "object_repr": "Lightings",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043a\\u043e\\u043d\\u043a\\u0430 SVG\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 69,
+    "fields": {
+      "action_time": "2023-01-08T07:19:46.353Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "category"
+      ],
+      "object_id": "15",
+      "object_repr": "More",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043a\\u043e\\u043d\\u043a\\u0430 SVG\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 70,
+    "fields": {
+      "action_time": "2023-01-08T07:20:09.071Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "category"
+      ],
+      "object_id": "20",
+      "object_repr": "Inactive -> Subinactive",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043a\\u043e\\u043d\\u043a\\u0430 SVG\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 71,
+    "fields": {
+      "action_time": "2023-01-10T16:28:36.347Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_orders",
+        "deliverymethod"
+      ],
+      "object_id": "1",
+      "object_repr": "Обычная доставка",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 72,
+    "fields": {
+      "action_time": "2023-01-10T18:57:33.604Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "product"
+      ],
+      "object_id": "1",
+      "object_repr": "Notebook Ноутбук - 500.0$",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0426\\u0435\\u043d\\u0430\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 73,
+    "fields": {
+      "action_time": "2023-01-10T19:42:54.171Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_orders",
+        "order"
+      ],
+      "object_id": "2",
+      "object_repr": "megano@megano.com (от 2023-01-10 19:42:20) - Ожидает оплаты",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 74,
+    "fields": {
+      "action_time": "2023-01-10T19:42:54.176Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_orders",
+        "order"
+      ],
+      "object_id": "1",
+      "object_repr": "megano@megano.com (от 2023-01-10 19:37:05) - Ожидает оплаты",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 75,
+    "fields": {
+      "action_time": "2023-01-10T19:50:48.100Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_orders",
+        "order"
+      ],
+      "object_id": "3",
+      "object_repr": "megano@megano.com (от 2023-01-10 19:42:56) - Ожидает оплаты",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 76,
+    "fields": {
+      "action_time": "2023-01-10T19:54:34.618Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_orders",
+        "order"
+      ],
+      "object_id": "4",
+      "object_repr": "megano@megano.com (от 2023-01-10 19:50:53) - Ожидает оплаты",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 77,
+    "fields": {
+      "action_time": "2023-01-10T20:02:30.795Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_orders",
+        "order"
+      ],
+      "object_id": "5",
+      "object_repr": "megano@megano.com (от 2023-01-10 20:00:02) - Ожидает оплаты",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 78,
+    "fields": {
+      "action_time": "2023-01-10T20:09:15.477Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_orders",
+        "order"
+      ],
+      "object_id": "6",
+      "object_repr": "megano@megano.com (от 2023-01-10 20:03:29) - Ожидает оплаты",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u043f\\u043e\\u0441\\u043e\\u0431 \\u043e\\u043f\\u043b\\u0430\\u0442\\u044b\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 79,
+    "fields": {
+      "action_time": "2023-01-10T20:09:30.666Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_orders",
+        "order"
+      ],
+      "object_id": "6",
+      "object_repr": "megano@megano.com (от 2023-01-10 20:03:29) - Ожидает оплаты",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u043f\\u043e\\u0441\\u043e\\u0431 \\u043e\\u043f\\u043b\\u0430\\u0442\\u044b\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 80,
+    "fields": {
+      "action_time": "2023-01-10T20:43:37.970Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_product",
+        "product"
+      ],
+      "object_id": "4",
+      "object_repr": "Keyboard Клавиатура - 45.0$",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u0441\\u0442\\u0430\\u0442\\u043e\\u043a\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 81,
+    "fields": {
+      "action_time": "2023-01-10T21:57:16.942Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_orders",
+        "order"
+      ],
+      "object_id": "8",
+      "object_repr": "megano@megano.com (от 2023-01-10 20:46:17) - Ошибка на стороне банка",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043e\\u043f\\u043b\\u0430\\u0442\\u044b\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 82,
+    "fields": {
+      "action_time": "2023-01-10T22:23:41.630Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_orders",
+        "order"
+      ],
+      "object_id": "9",
+      "object_repr": "megano@megano.com (от 2023-01-10 22:22:07) - Ожидает оплаты",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043e\\u043f\\u043b\\u0430\\u0442\\u044b\"]}}]"
+    }
+  }
+]

@@ -1,0 +1,1160 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-11 02:58+0400\n"
+"PO-Revision-Date: 2023-01-10 21:51+0000\n"
+"Last-Translator: Anonymous User <megano@megano.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
+
+#: .\___shop___\settings.py:152
+msgid "Русский"
+msgstr ""
+
+#: .\___shop___\settings.py:153
+msgid "Английский"
+msgstr "English"
+
+#: .\app_cart\apps.py:8
+msgid "Приложение «Корзина»"
+msgstr ""
+
+#: .\app_cart\models.py:13 .\app_orders\models.py:15
+#: .\app_product\models.py:318 .\app_reviews\models.py:14
+msgid "Пользователь"
+msgstr ""
+
+#: .\app_cart\models.py:19 .\app_orders\models.py:111
+#: .\app_product\models.py:190 .\app_product\models.py:225
+#: .\app_product\models.py:277 .\app_product\models.py:324
+#: .\app_product\views.py:13 .\app_reviews\models.py:20
+msgid "Товар"
+msgstr ""
+
+#: .\app_cart\models.py:23 .\app_orders\models.py:115
+msgid "Количество товара"
+msgstr ""
+
+#: .\app_cart\models.py:28 .\app_product\models.py:122
+#: .\templates\general\catalog\catalog_filter_main.html:17
+msgid "Цена"
+msgstr ""
+
+#: .\app_cart\models.py:35
+msgid "корзина"
+msgstr ""
+
+#: .\app_cart\models.py:36
+msgid "корзины"
+msgstr ""
+
+#: .\app_cart\views.py:15 .\app_cart\views.py:16
+#: .\templates\base_template\base_template.html:193
+msgid "Корзина"
+msgstr ""
+
+#: .\app_cart\views.py:71 .\app_cart\views.py:158
+msgid "Количество товара <b>\"{}\"</b> ограничено! Доступно: {} шт."
+msgstr ""
+
+#: .\app_cart\views.py:76
+msgid "Товар <b>\"{}\"</b> успешно добавлен в корзину"
+msgstr ""
+
+#: .\app_cart\views.py:79 .\app_cart\views.py:170
+#: .\templates\general\catalog\catalog_product.html:28
+#: .\templates\pages\product\product.html:72
+#: .\templates\pages\shop\cart.html:77
+msgid "Товара нет в наличии"
+msgstr ""
+
+#: .\app_cart\views.py:82 .\app_cart\views.py:176 .\app_cart\views.py:205
+msgid "Такого товара не существует"
+msgstr ""
+
+#: .\app_cart\views.py:84 .\app_cart\views.py:108 .\app_cart\views.py:178
+#: .\app_cart\views.py:208 .\app_orders\views.py:259 .\app_orders\views.py:315
+msgid "Неверно создан запрос"
+msgstr ""
+
+#: .\app_cart\views.py:164
+msgid "Количество товара <b>\"{}\"</b> успешно обновлено ({})"
+msgstr ""
+
+#: .\app_cart\views.py:200
+msgid "Товар <b>\"{}\"</b> успешно удалён из корзины!"
+msgstr ""
+
+#: .\app_categories\apps.py:8
+msgid "Приложение «Категории»"
+msgstr ""
+
+#: .\app_import\apps.py:8
+msgid "Приложение «Импорт»"
+msgstr ""
+
+#: .\app_orders\apps.py:8
+msgid "Приложение «Заказы»"
+msgstr ""
+
+#: .\app_orders\forms.py:13 .\app_users\forms.py:47 .\app_users\forms.py:132
+#: .\app_users\models.py:35 .\templates\pages\account\profile.html:31
+#: .\templates\pages\orders\order_detail.html:22
+#: .\templates\pages\orders\order_step_1.html:14
+#: .\templates\pages\orders\order_step_4.html:14
+msgid "Полное имя"
+msgstr ""
+
+#: .\app_orders\forms.py:36 .\app_users\forms.py:70 .\app_users\models.py:59
+#: .\templates\base_template\base_template.html:226
+#: .\templates\forms\signup_form.html:27
+#: .\templates\pages\account\profile.html:42
+#: .\templates\pages\orders\order_detail.html:29
+#: .\templates\pages\orders\order_step_1.html:21
+#: .\templates\pages\orders\order_step_4.html:21
+msgid "Телефон"
+msgstr ""
+
+#: .\app_orders\models.py:19 .\app_reviews\models.py:24
+msgid "Дата создания"
+msgstr ""
+
+#: .\app_orders\models.py:24 .\templates\pages\account\account.html:43
+#: .\templates\pages\account\history_orders.html:27
+#: .\templates\pages\orders\order.html:8
+#: .\templates\pages\orders\order_detail.html:66
+msgid "Способ оплаты"
+msgstr ""
+
+#: .\app_orders\models.py:30 .\templates\pages\account\account.html:36
+#: .\templates\pages\account\history_orders.html:20
+#: .\templates\pages\orders\order.html:7
+#: .\templates\pages\orders\order_detail.html:45
+#: .\templates\pages\orders\order_step_4.html:38
+msgid "Способ доставки"
+msgstr ""
+
+#: .\app_orders\models.py:36
+msgid "Статус оплаты"
+msgstr ""
+
+#: .\app_orders\models.py:44
+msgid "Дата оплаты"
+msgstr ""
+
+#: .\app_orders\models.py:48 .\templates\pages\orders\order_detail.html:52
+#: .\templates\pages\orders\order_step_2.html:50
+#: .\templates\pages\orders\order_step_4.html:45
+msgid "Город"
+msgstr ""
+
+#: .\app_orders\models.py:53 .\templates\base_template\base_template.html:227
+#: .\templates\pages\orders\order_detail.html:59
+#: .\templates\pages\orders\order_step_2.html:57
+#: .\templates\pages\orders\order_step_4.html:52
+msgid "Адрес"
+msgstr ""
+
+#: .\app_orders\models.py:96
+msgid "заказ"
+msgstr ""
+
+#: .\app_orders\models.py:97
+msgid "заказы"
+msgstr ""
+
+#: .\app_orders\models.py:105
+msgid "Заказ"
+msgstr ""
+
+#: .\app_orders\models.py:119
+msgid "Цена товара"
+msgstr ""
+
+#: .\app_orders\models.py:128
+msgid "товар заказа"
+msgstr ""
+
+#: .\app_orders\models.py:129
+msgid "товары заказа"
+msgstr ""
+
+#: .\app_orders\models.py:136 .\app_orders\models.py:152
+#: .\app_orders\models.py:180 .\app_product\models.py:22
+#: .\app_product\models.py:99
+#: .\templates\general\catalog\catalog_filter_main.html:24
+msgid "Название"
+msgstr ""
+
+#: .\app_orders\models.py:144
+msgid "способ оплаты"
+msgstr ""
+
+#: .\app_orders\models.py:145
+msgid "способы оплаты"
+msgstr ""
+
+#: .\app_orders\models.py:156 .\app_product\models.py:111
+#: .\templates\pages\product\product.html:86
+msgid "Описание"
+msgstr ""
+
+#: .\app_orders\models.py:172
+msgid "способ доставки"
+msgstr ""
+
+#: .\app_orders\models.py:173
+msgid "способы доставки"
+msgstr ""
+
+#: .\app_orders\models.py:183
+msgid "Приоритет"
+msgstr ""
+
+#: .\app_orders\models.py:192
+msgid "статус оплаты"
+msgstr ""
+
+#: .\app_orders\models.py:193
+msgid "статусы оплаты"
+msgstr ""
+
+#: .\app_orders\views.py:26 .\app_orders\views.py:27
+msgid "Оформление заказа"
+msgstr ""
+
+#: .\app_orders\views.py:67
+msgid "Заказ №{}"
+msgstr ""
+
+#: .\app_orders\views.py:68 .\app_users\views.py:209 .\app_users\views.py:210
+#: .\templates\general\account\navigation.html:27
+msgid "История заказов"
+msgstr ""
+
+#: .\app_orders\views.py:69
+msgid "Детали заказа №{}"
+msgstr ""
+
+#: .\app_orders\views.py:91 .\templates\pages\orders\order_step_4.html:59
+msgid "Оплата"
+msgstr ""
+
+#: .\app_orders\views.py:92
+msgid "Оплата заказа"
+msgstr ""
+
+#: .\app_orders\views.py:105 .\app_orders\views.py:106
+msgid "Ожидание оплаты"
+msgstr ""
+
+#: .\app_orders\views.py:137 .\app_orders\views.py:313
+#: .\templates\pages\orders\order_detail.html:197
+msgid "Такого заказа не существует"
+msgstr ""
+
+#: .\app_orders\views.py:172
+msgid "ОШИБКА: Товара \"<b>{}</b>\" не осталось на складе. Проверьте корзину!"
+msgstr ""
+
+#: .\app_orders\views.py:188
+msgid "Такого способа оплаты не существует"
+msgstr ""
+
+#: .\app_orders\views.py:203
+msgid "Такого способа доставки не существует"
+msgstr ""
+
+#: .\app_orders\views.py:223
+msgid "Ошибка при создании заказа"
+msgstr ""
+
+#: .\app_orders\views.py:245
+msgid "Ошибка при добавлении товара в заказ!"
+msgstr ""
+
+#: .\app_orders\views.py:266
+msgid "Отмена заказа"
+msgstr ""
+
+#: .\app_orders\views.py:267
+msgid "Заказ был отменен"
+msgstr ""
+
+#: .\app_product\apps.py:8
+msgid "Приложение «Товар»"
+msgstr ""
+
+#: .\app_product\models.py:27
+msgid "Родительская категория"
+msgstr ""
+
+#: .\app_product\models.py:42
+msgid "Иконка SVG"
+msgstr ""
+
+#: .\app_product\models.py:47
+msgid "Изображение"
+msgstr ""
+
+#: .\app_product\models.py:57
+msgid "Категория активна"
+msgstr ""
+
+#: .\app_product\models.py:61
+msgid "Избранное"
+msgstr ""
+
+#: .\app_product\models.py:65 .\app_product\models.py:137
+msgid "Индекс сортировки"
+msgstr ""
+
+#: .\app_product\models.py:91
+msgid "категория"
+msgstr ""
+
+#: .\app_product\models.py:92
+msgid "категории"
+msgstr ""
+
+#: .\app_product\models.py:106
+msgid "Категория"
+msgstr ""
+
+#: .\app_product\models.py:117
+msgid "Подробное описание"
+msgstr ""
+
+#: .\app_product\models.py:127
+msgid "Остаток"
+msgstr ""
+
+#: .\app_product\models.py:132
+msgid "Активный товар"
+msgstr ""
+
+#: .\app_product\models.py:142
+msgid "Ограниченный тираж"
+msgstr ""
+
+#: .\app_product\models.py:147
+msgid "Количество покупок"
+msgstr ""
+
+#: .\app_product\models.py:153
+msgid "Дата добавления"
+msgstr ""
+
+#: .\app_product\models.py:181
+msgid "товар"
+msgstr ""
+
+#: .\app_product\models.py:182
+msgid "товары"
+msgstr ""
+
+#: .\app_product\models.py:194
+msgid "Изображение товара"
+msgstr ""
+
+#: .\app_product\models.py:205
+msgid "изображение"
+msgstr ""
+
+#: .\app_product\models.py:206
+msgid "изображения"
+msgstr ""
+
+#: .\app_product\models.py:215
+#: .\templates\general\catalog\catalog_filter_main.html:33
+#: .\templates\pages\product\product.html:104
+msgid "Характеристика"
+msgstr ""
+
+#: .\app_product\models.py:220
+#: .\templates\general\catalog\catalog_filter_main.html:41
+msgid "Значение характеристики"
+msgstr ""
+
+#: .\app_product\models.py:234
+msgid "Характеристика товара"
+msgstr ""
+
+#: .\app_product\models.py:241
+msgid "характеристика"
+msgstr ""
+
+#: .\app_product\models.py:242
+msgid "характеристики"
+msgstr ""
+
+#: .\app_product\models.py:250
+msgid "Значение характеристики товара"
+msgstr ""
+
+#: .\app_product\models.py:257
+msgid "значение"
+msgstr ""
+
+#: .\app_product\models.py:258
+msgid "значения"
+msgstr ""
+
+#: .\app_product\models.py:267
+msgid "Атрибут товара"
+msgstr ""
+
+#: .\app_product\models.py:272
+#: .\templates\general\catalog\catalog_filter_main.html:62
+msgid "Значение атрибута"
+msgstr ""
+
+#: .\app_product\models.py:286
+msgid "Название атрибута"
+msgstr ""
+
+#: .\app_product\models.py:293
+msgid "атрибут"
+msgstr ""
+
+#: .\app_product\models.py:294
+msgid "атрибуты"
+msgstr ""
+
+#: .\app_product\models.py:302
+msgid "Значение атрибута товара"
+msgstr ""
+
+#: .\app_product\models.py:309
+msgid "значение атрибута"
+msgstr ""
+
+#: .\app_product\models.py:310
+msgid "значения атрибутов"
+msgstr ""
+
+#: .\app_product\models.py:332
+msgid "история просмотра товаров"
+msgstr ""
+
+#: .\app_product\models.py:333
+msgid "истории просмотра товаров"
+msgstr ""
+
+#: .\app_product\views.py:14
+msgid "О товаре"
+msgstr ""
+
+#: .\app_reviews\apps.py:8
+msgid "Приложение «Отзывы»"
+msgstr ""
+
+#: .\app_reviews\forms.py:13 .\app_reviews\models.py:28
+msgid "Текст отзыва"
+msgstr ""
+
+#: .\app_reviews\models.py:37
+msgid "комментарий"
+msgstr ""
+
+#: .\app_reviews\models.py:38
+msgid "комментарии"
+msgstr ""
+
+#: .\app_settings\apps.py:8
+msgid "Приложение «Настройки магазина»"
+msgstr ""
+
+#: .\app_settings\models.py:26
+msgid "Лимит суммы для бесплатной доставки"
+msgstr ""
+
+#: .\app_settings\models.py:30 .\templates\pages\account\account.html:57
+#: .\templates\pages\account\history_orders.html:41
+#: .\templates\pages\orders\order_detail.html:145
+#: .\templates\pages\orders\order_step_4.html:118
+msgid "Стоимость доставки"
+msgstr ""
+
+#: .\app_settings\models.py:34
+msgid "Стоимость экспресс-доставки"
+msgstr ""
+
+#: .\app_settings\models.py:38
+msgid "Доступ к аутентификации, когда авторизован"
+msgstr ""
+
+#: .\app_settings\models.py:42
+msgid "Максимальный размер аватарки, МБ"
+msgstr ""
+
+#: .\app_settings\models.py:46
+msgid "Количество популярных товаров на главной"
+msgstr ""
+
+#: .\app_settings\models.py:50
+msgid "Количество товаров на странице"
+msgstr ""
+
+#: .\app_settings\models.py:54
+msgid "настройка сайта"
+msgstr ""
+
+#: .\app_settings\models.py:55
+msgid "настройки сайта"
+msgstr ""
+
+#: .\app_shop\apps.py:8
+msgid "Приложение «Магазин»"
+msgstr ""
+
+#: .\app_shop\views.py:32
+msgid "Главная страница магазина"
+msgstr ""
+
+#: .\app_shop\views.py:60 .\templates\general\header\nav.html:19
+msgid "Каталог"
+msgstr ""
+
+#: .\app_shop\views.py:61
+msgid "Каталог товаров"
+msgstr ""
+
+#: .\app_tags\apps.py:8
+msgid "Приложение «Пользовательские теги»"
+msgstr ""
+
+#: .\app_users\apps.py:8
+msgid "Приложение «Пользователи»"
+msgstr ""
+
+#: .\app_users\forms.py:21 .\app_users\forms.py:106 .\app_users\forms.py:204
+#: .\app_users\forms.py:235 .\templates\forms\signup_form.html:12
+#: .\templates\pages\account\login_modal_bs.html:28
+#: .\templates\pages\account\login_modal_bs.html:30
+#: .\templates\pages\orders\order_step_1.html:38
+msgid "Пароль"
+msgstr ""
+
+#: .\app_users\forms.py:34 .\app_users\forms.py:119 .\app_users\forms.py:248
+#: .\templates\forms\signup_form.html:17
+#: .\templates\pages\orders\order_step_1.html:45
+msgid "Повторите пароль"
+msgstr ""
+
+#: .\app_users\managers.py:13
+msgid "E-mail должен быть установлен"
+msgstr ""
+
+#: .\app_users\managers.py:29
+msgid "Суперпользователь должен иметь флаг is_superuser=True."
+msgstr ""
+
+#: .\app_users\models.py:17
+msgid ""
+"Расширение не поддерживается. Разрешенные расширения .jpg .gif .png .jpeg"
+msgstr ""
+
+#: .\app_users\models.py:26
+msgid "Вы не можете загрузить аватар размером > {} MB"
+msgstr ""
+
+#: .\app_users\models.py:39
+msgid "Дата регистрации"
+msgstr ""
+
+#: .\app_users\models.py:43
+msgid "Активен"
+msgstr ""
+
+#: .\app_users\models.py:46 .\templates\forms\signup_form.html:33
+#: .\templates\pages\account\profile.html:14
+msgid "Аватар"
+msgstr ""
+
+#: .\app_users\models.py:63
+msgid "Сотрудник"
+msgstr ""
+
+#: .\app_users\models.py:76
+msgid "пользователь"
+msgstr ""
+
+#: .\app_users\models.py:77
+msgid "пользователи"
+msgstr ""
+
+#: .\app_users\models.py:84
+msgid "группа"
+msgstr ""
+
+#: .\app_users\models.py:85
+msgid "группы"
+msgstr ""
+
+#: .\app_users\validators.py:18 .\app_users\validators.py:24
+msgid ""
+"Пароль должен содержать 8 символов и минимум 1 цифру, одну букву, одну букву "
+"в верхнем регистре и один специальный символ из !#$%&?"
+msgstr ""
+
+#: .\app_users\views.py:32 .\app_users\views.py:33
+#: .\templates\forms\login_form.html:7 .\templates\general\auth\auth.html:17
+#: .\templates\pages\account\login_modal_bs.html:34
+msgid "Авторизация"
+msgstr ""
+
+#: .\app_users\views.py:83 .\app_users\views.py:84
+#: .\templates\general\account\navigation.html:15
+msgid "Личный кабинет"
+msgstr ""
+
+#: .\app_users\views.py:104 .\app_users\views.py:105
+#: .\templates\general\account\navigation.html:21
+msgid "Профиль"
+msgstr ""
+
+#: .\app_users\views.py:158
+msgid "Пароли должны совпадать"
+msgstr ""
+
+#: .\app_users\views.py:177
+msgid "Такая почта уже зарегистрирована!"
+msgstr ""
+
+#: .\app_users\views.py:190
+msgid "Такой телефон уже зарегистрирован!"
+msgstr ""
+
+#: .\app_users\views.py:224 .\app_users\views.py:225
+msgid "История просмотров"
+msgstr ""
+
+#: .\app_users\views.py:267 .\app_users\views.py:268
+msgid "Восстановление доступа"
+msgstr ""
+
+#: .\templates\base_template\base_template.html:93
+msgid "Показать навигацию"
+msgstr ""
+
+#: .\templates\base_template\base_template.html:107
+msgid "Все разделы"
+msgstr ""
+
+#: .\templates\base_template\base_template.html:130
+#: .\templates\base_template\base_template.html:140
+#: .\templates\general\header\nav.html:15
+msgid "Главная"
+msgstr ""
+
+#: .\templates\base_template\base_template.html:188
+msgid "Полезные ссылки"
+msgstr ""
+
+#: .\templates\base_template\base_template.html:191
+msgid "Приобрести"
+msgstr ""
+
+#: .\templates\base_template\base_template.html:195
+msgid "Доставка"
+msgstr ""
+
+#: .\templates\base_template\base_template.html:197
+msgid "О заказе"
+msgstr ""
+
+#: .\templates\base_template\base_template.html:199
+msgid "Условия"
+msgstr ""
+
+#: .\templates\base_template\base_template.html:201
+msgid "Соглашения"
+msgstr ""
+
+#: .\templates\base_template\base_template.html:206
+msgid "Мой аккаунт"
+msgstr ""
+
+#: .\templates\base_template\base_template.html:209
+msgid "Аксессуары"
+msgstr ""
+
+#: .\templates\base_template\base_template.html:211
+msgid "Сумки"
+msgstr ""
+
+#: .\templates\base_template\base_template.html:213
+msgid "Камеры"
+msgstr ""
+
+#: .\templates\base_template\base_template.html:215
+msgid "Одежда"
+msgstr ""
+
+#: .\templates\base_template\base_template.html:217
+msgid "Электроника"
+msgstr ""
+
+#: .\templates\base_template\base_template.html:219
+msgid "Мода"
+msgstr ""
+
+#: .\templates\base_template\base_template.html:224
+msgid "Контакты"
+msgstr ""
+
+#: .\templates\base_template\base_template.html:227
+msgid "New York, north<br>Avenue 26/7<br>0057"
+msgstr "Нью-Йорк, север<br>Авеню 26/7<br>0057"
+
+#: .\templates\base_template\base_template.html:236
+msgid "Все права защищены"
+msgstr ""
+
+#: .\templates\base_template\base_template.html:238
+msgid "Доступные платежи"
+msgstr ""
+
+#: .\templates\forms\login_form.html:11
+msgid "У меня нет аккаунта"
+msgstr ""
+
+#: .\templates\forms\login_form.html:13
+msgid "Забыли пароль?"
+msgstr ""
+
+#: .\templates\forms\signup_form.html:22
+msgid "Имя"
+msgstr ""
+
+#: .\templates\forms\signup_form.html:45 .\templates\general\auth\auth.html:19
+msgid "Регистрация"
+msgstr ""
+
+#: .\templates\forms\signup_form.html:49
+msgid "У меня уже есть аккаунт"
+msgstr ""
+
+#: .\templates\general\account\navigation.html:6
+msgid "Навигация"
+msgstr ""
+
+#: .\templates\general\account\navigation.html:33
+msgid "История просмотра"
+msgstr ""
+
+#: .\templates\general\auth\auth.html:9
+msgid "Выход"
+msgstr ""
+
+#: .\templates\general\catalog\catalog_filter.html:6
+msgid "Фильтр"
+msgstr ""
+
+#: .\templates\general\catalog\catalog_filter_main.html:55
+msgid "Атрибут"
+msgstr ""
+
+#: .\templates\general\catalog\catalog_filter_main.html:77
+msgid "Только товары в наличии"
+msgstr ""
+
+#: .\templates\general\catalog\catalog_filter_main.html:82
+msgid "Применить фильтр"
+msgstr ""
+
+#: .\templates\general\catalog\catalog_product.html:9
+#: .\templates\general\shop\favourite_categories.html:22
+#: .\templates\pages\orders\order_detail.html:110
+#: .\templates\pages\orders\order_step_4.html:82
+#: .\templates\pages\product\product.html:30
+#: .\templates\pages\shop\cart.html:17
+msgid "Нет изображения"
+msgstr ""
+
+#: .\templates\general\catalog\catalog_sort.html:4
+msgid "Сортировать по"
+msgstr ""
+
+#: .\templates\general\catalog\catalog_sort\sort_create_at.html:5
+#: .\templates\general\catalog\catalog_sort\sort_create_at.html:9
+#: .\templates\general\catalog\catalog_sort\sort_create_at.html:14
+msgid "Новизне"
+msgstr ""
+
+#: .\templates\general\catalog\catalog_sort\sort_price.html:5
+#: .\templates\general\catalog\catalog_sort\sort_price.html:9
+#: .\templates\general\catalog\catalog_sort\sort_price.html:14
+msgid "Цене"
+msgstr ""
+
+#: .\templates\general\catalog\catalog_sort\sort_reviews.html:5
+#: .\templates\general\catalog\catalog_sort\sort_reviews.html:9
+#: .\templates\general\catalog\catalog_sort\sort_reviews.html:14
+msgid "Отзывам"
+msgstr ""
+
+#: .\templates\general\catalog\catalog_sort\sort_sold_amount.html:5
+#: .\templates\general\catalog\catalog_sort\sort_sold_amount.html:9
+#: .\templates\general\catalog\catalog_sort\sort_sold_amount.html:14
+msgid "Популярности"
+msgstr ""
+
+#: .\templates\general\catalog\pagination.html:5
+#: .\templates\general\catalog\pagination.html:6
+msgid "Первая страница"
+msgstr ""
+
+#: .\templates\general\catalog\pagination.html:38
+msgid "Последняя страница"
+msgstr ""
+
+#: .\templates\general\control_panel\control_panel.html:9
+msgid "Бесплатная доставка"
+msgstr ""
+
+#: .\templates\general\control_panel\control_panel.html:12
+msgid "Мы в соцсетях"
+msgstr ""
+
+#: .\templates\general\header\nav.html:24
+msgid "Админка"
+msgstr ""
+
+#: .\templates\general\locales.html:31 .\templates\general\locales.html:32
+msgid "Переключить на Английский"
+msgstr "Switch to English"
+
+#: .\templates\general\locales.html:39 .\templates\general\locales.html:40
+msgid "Переключить на Русский"
+msgstr ""
+
+#: .\templates\general\search\search.html:13
+msgid "Что ищем?"
+msgstr ""
+
+#: .\templates\general\search\search.html:17
+msgid "Поиск"
+msgstr ""
+
+#: .\templates\general\shop\favourite_categories.html:29
+msgid "Нет избранных категорий"
+msgstr ""
+
+#: .\templates\general\shop\limited_edition.html:5
+msgid "Ограниченная серия товаров"
+msgstr ""
+
+#: .\templates\general\shop\limited_edition.html:34
+msgid "Нет товаров ограниченной серии"
+msgstr ""
+
+#: .\templates\general\shop\popular_products.html:7
+msgid "Популярные продукты"
+msgstr ""
+
+#: .\templates\general\shop\popular_products.html:14
+msgid "Нет популярных товаров"
+msgstr ""
+
+#: .\templates\general\shop\shipping.html:9
+msgid "Доставка и возврат"
+msgstr ""
+
+#: .\templates\general\shop\shipping.html:11
+msgid "Всемирное судоходство"
+msgstr ""
+
+#: .\templates\general\shop\shipping.html:21
+msgid "Возврат средств"
+msgstr ""
+
+#: .\templates\general\shop\shipping.html:23
+msgid "Гарантированные платежи"
+msgstr ""
+
+#: .\templates\general\shop\shipping.html:33
+msgid "Политика поддержки"
+msgstr ""
+
+#: .\templates\general\shop\shipping.html:35
+msgid "Быстрая служба поддержки"
+msgstr ""
+
+#: .\templates\general\shop\shipping.html:45
+msgid "Гарантия качества"
+msgstr ""
+
+#: .\templates\general\shop\shipping.html:47
+msgid "Лучшее качество продуктов"
+msgstr ""
+
+#: .\templates\pages\account\account.html:18
+msgid "Редактировать профиль"
+msgstr ""
+
+#: .\templates\pages\account\account.html:29
+#: .\templates\pages\account\history_orders.html:13
+msgid "от"
+msgstr ""
+
+#: .\templates\pages\account\account.html:50
+#: .\templates\pages\account\history_orders.html:34
+msgid "Стоимость товаров"
+msgstr ""
+
+#: .\templates\pages\account\account.html:64
+#: .\templates\pages\account\history_orders.html:48
+msgid "Общая стоимость"
+msgstr ""
+
+#: .\templates\pages\account\account.html:77
+#: .\templates\pages\account\history_orders.html:61
+#: .\templates\pages\orders\order_detail.html:79
+msgid "Не оплачен"
+msgstr ""
+
+#: .\templates\pages\account\account.html:83
+#: .\templates\pages\account\history_orders.html:67
+#: .\templates\pages\orders\order_detail.html:85
+msgid "Оплата не прошла"
+msgstr ""
+
+#: .\templates\pages\account\history_orders.html:80
+msgid "Вы еще не успели ничего заказать"
+msgstr ""
+
+#: .\templates\pages\account\history_products.html:13
+#: .\templates\pages\shop\catalog.html:12
+msgid "Товаров нет"
+msgstr ""
+
+#: .\templates\pages\account\login.html:13
+msgid "Вы уже авторизованы"
+msgstr ""
+
+#: .\templates\pages\account\login_modal_bs.html:12
+msgid "Вход в систему"
+msgstr ""
+
+#: .\templates\pages\account\login_modal_bs.html:35
+msgid "Закрыть"
+msgstr ""
+
+#: .\templates\pages\account\profile.html:21
+msgid "Выберите аватар"
+msgstr ""
+
+#: .\templates\pages\account\profile.html:58
+msgid "Измените пароль, если нужно"
+msgstr ""
+
+#: .\templates\pages\account\profile.html:66
+msgid "Повторите новый пароль"
+msgstr ""
+
+#: .\templates\pages\account\profile.html:74
+msgid "Сохранить"
+msgstr ""
+
+#: .\templates\pages\account\profile.html:92
+#: .\templates\pages\product\product.html:181
+msgid "Пока отзывов нет"
+msgstr ""
+
+#: .\templates\pages\account\signup.html:13
+msgid "Вы уже зарегистрированы и авторизованы"
+msgstr ""
+
+#: .\templates\pages\orders\order.html:5
+msgid "Шаг"
+msgstr ""
+
+#: .\templates\pages\orders\order.html:6
+msgid "Параметры пользователя"
+msgstr ""
+
+#: .\templates\pages\orders\order.html:9
+msgid "Подтверждение заказа"
+msgstr ""
+
+#: .\templates\pages\orders\order.html:20
+msgid "Оплата невозможна, Ваша корзина пуста"
+msgstr ""
+
+#: .\templates\pages\orders\order_canceled.html:5
+msgid "Ваш заказ был отменён"
+msgstr ""
+
+#: .\templates\pages\orders\order_detail.html:15
+msgid "Дата заказа"
+msgstr ""
+
+#: .\templates\pages\orders\order_detail.html:138
+#: .\templates\pages\orders\order_step_4.html:111
+#: .\templates\pages\shop\cart.html:118
+msgid "Корзина пуста"
+msgstr ""
+
+#: .\templates\pages\orders\order_detail.html:156
+#, python-format
+msgid ""
+"\n"
+"                                            %(desc)s\n"
+"                                        "
+msgstr ""
+
+#: .\templates\pages\orders\order_detail.html:171
+#: .\templates\pages\orders\order_step_4.html:142
+msgid "Итого"
+msgstr ""
+
+#: .\templates\pages\orders\order_detail.html:177
+#: .\templates\pages\orders\order_step_4.html:146
+msgid "Оплатить"
+msgstr ""
+
+#: .\templates\pages\orders\order_detail.html:181
+msgid "Отменить заказ"
+msgstr ""
+
+#: .\templates\pages\orders\order_payment_1.html:8
+msgid "Номер карты"
+msgstr ""
+
+#: .\templates\pages\orders\order_payment_2.html:7
+msgid "Номер счета"
+msgstr ""
+
+#: .\templates\pages\orders\order_payment_2.html:11
+msgid "Сгенирировать случайный счет"
+msgstr ""
+
+#: .\templates\pages\orders\order_payment_process.html:14
+msgid "Ждем подтверждения оплаты платежной системой"
+msgstr ""
+
+#: .\templates\pages\orders\order_progress.html:6
+msgid "Прогресс заполнения"
+msgstr ""
+
+#: .\templates\pages\orders\order_step_1.html:53
+msgid "Я уже зарегистрирован"
+msgstr ""
+
+#: .\templates\pages\orders\order_step_1.html:62
+#: .\templates\pages\orders\order_step_2.html:63
+#: .\templates\pages\orders\order_step_3.html:27
+msgid "Дальше"
+msgstr ""
+
+#: .\templates\pages\orders\order_step_1.html:69
+msgid "Чтобы продолжить, нужно быть авторизованным пользователем"
+msgstr ""
+
+#: .\templates\pages\orders\order_step_2.html:26
+#: .\templates\pages\orders\order_step_2.html:28
+msgid "Обычная доставка"
+msgstr ""
+
+#: .\templates\pages\orders\order_step_2.html:33
+#, python-format
+msgid ""
+"Доставка бесплатная, если сумма заказа от %(order_delivery_limit)s$. Если "
+"сумма заказа меньше, то стоимость доставки %(order_delivery_price)s$."
+msgstr ""
+
+#: .\templates\pages\orders\order_step_2.html:39
+#: .\templates\pages\orders\order_step_2.html:41
+msgid "Экспресс-доставка"
+msgstr ""
+
+#: .\templates\pages\orders\order_step_2.html:44
+#, python-format
+msgid "Любая сумма заказа. Стоимость %(order_delivery_express)s$"
+msgstr ""
+
+#: .\templates\pages\orders\order_step_2.html:53
+msgid "Заполните город"
+msgstr ""
+
+#: .\templates\pages\orders\order_step_2.html:60
+msgid "Заполните адрес"
+msgstr ""
+
+#: .\templates\pages\orders\order_step_3.html:10
+#: .\templates\pages\orders\order_step_3.html:13
+msgid "Онлайн картой"
+msgstr ""
+
+#: .\templates\pages\orders\order_step_3.html:19
+#: .\templates\pages\orders\order_step_3.html:22
+msgid "Онлайн со случайного чужого счета"
+msgstr ""
+
+#: .\templates\pages\product\product.html:67
+msgid "В корзину"
+msgstr ""
+
+#: .\templates\pages\product\product.html:77
+msgid "Теги"
+msgstr ""
+
+#: .\templates\pages\product\product.html:89
+msgid "Дополнительная информация"
+msgstr ""
+
+#: .\templates\pages\product\product.html:92
+msgid "Отзывы"
+msgstr ""
+
+#: .\templates\pages\product\product.html:106
+msgid "Значение"
+msgstr ""
+
+#: .\templates\pages\product\product.html:122
+msgid "У товара нет характеристик"
+msgstr ""
+
+#: .\templates\pages\product\product.html:145
+msgid "У товара нет дополнительных данных"
+msgstr ""
+
+#: .\templates\pages\product\product.html:152
+msgid "Отзывов"
+msgstr ""
+
+#: .\templates\pages\product\product.html:189
+msgid "Добавить отзыв"
+msgstr ""
+
+#: .\templates\pages\product\product.html:206
+msgid "Отправить отзыв"
+msgstr ""
+
+#: .\templates\pages\product\product.html:214
+msgid "Авторизуйтесь, чтобы оставлять отзывы"
+msgstr ""
+
+#: .\templates\pages\shop\cart.html:92
+msgid "Общая&nbsp;цена"
+msgstr ""
+
+#: .\templates\pages\shop\cart.html:110
+msgid "Оформить заказ"
+msgstr ""

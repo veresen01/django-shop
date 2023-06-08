@@ -1,0 +1,5 @@
+{% if errors %}
+    {% for error in errors %}
+        <div class="form-error">{{ error|escape }}</div>
+    {% endfor %}
+{% endif %}

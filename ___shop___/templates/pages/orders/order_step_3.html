@@ -1,0 +1,29 @@
+{% load i18n %}
+<div class="Order-block" id="step3">
+    <header class="Section-header Section-header_sm">
+        <h2 class="Section-title">{{ html_step }} 3. {{ html_step_3 }}
+        </h2>
+    </header>
+    <div class="form-group">
+        <div>
+            <label class="toggle">
+                <input type="radio" name="pay" value="1" checked="checked" data-value="{% trans "Онлайн картой" %}"/>
+                <span class="toggle-box"></span>
+                <span class="toggle-text">
+                    {% trans "Онлайн картой" %}
+                </span>
+            </label>
+        </div>
+        <div>
+            <label class="toggle">
+                <input type="radio" name="pay" value="2" data-value="{% trans "Онлайн со случайного чужого счета" %}"/>
+                <span class="toggle-box"></span>
+                <span class="toggle-text">
+                    {% trans "Онлайн со случайного чужого счета" %}
+                </span>
+            </label>
+        </div>
+    </div>
+    <div class="Order-footer"><a class="btn btn_success Order-next" href="#step4" onclick="javascript:editOrderData()">{% trans "Дальше" %}</a>
+    </div>
+</div>

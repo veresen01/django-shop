@@ -1,0 +1,152 @@
+{% load static %}
+{% load i18n %}
+<div class="Order-block" id="step4">
+    <header class="Section-header Section-header_sm">
+        <h2 class="Section-title">{{ html_step }} 4. {{ html_step_4 }}
+        </h2>
+    </header>
+    <!--+div.Order.-confirmation-->
+    <div class="Order-infoBlock">
+        <div class="Order-personal">
+            <div class="row">
+                <div class="row-block">
+                    <div class="Order-info">
+                        <div class="Order-infoType">{% trans "Полное имя" %}:
+                        </div>
+                        <div class="Order-infoContent" id="order_full_name">
+                            {% include 'general/system/preloader.html' %}
+                        </div>
+                    </div>
+                    <div class="Order-info">
+                        <div class="Order-infoType">{% trans "Телефон" %}:
+                        </div>
+                        <div class="Order-infoContent" id="order_phone">
+                            {% include 'general/system/preloader.html' %}
+                        </div>
+                    </div>
+                    <div class="Order-info">
+                        <div class="Order-infoType">
+                            E-mail:
+                        </div>
+                        <div class="Order-infoContent" id="order_email">
+                            {% include 'general/system/preloader.html' %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row-block">
+                    <div class="Order-info Order-info_delivery">
+                        <div class="Order-infoType">{% trans "Способ доставки" %}:
+                        </div>
+                        <div class="Order-infoContent" id="order_delivery">
+                            {% include 'general/system/preloader.html' %}
+                        </div>
+                    </div>
+                    <div class="Order-info">
+                        <div class="Order-infoType">{% trans "Город" %}:
+                        </div>
+                        <div class="Order-infoContent" id="order_city">
+                            {% include 'general/system/preloader.html' %}
+                        </div>
+                    </div>
+                    <div class="Order-info">
+                        <div class="Order-infoType">{% trans "Адрес" %}:
+                        </div>
+                        <div class="Order-infoContent" id="order_address">
+                            {% include 'general/system/preloader.html' %}
+                        </div>
+                    </div>
+                    <div class="Order-info Order-info_pay">
+                        <div class="Order-infoType">{% trans "Оплата" %}:
+                        </div>
+                        <div class="Order-infoContent" id="order_payment">
+                            {% include 'general/system/preloader.html' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Cart Cart_order">
+
+            {% if cart|length > 0 %}
+                {% for item in cart %}
+                    {% with product=item.product %}
+                        {% url 'product:product_detail' product.id as link_product_detail %}
+
+                        <div class="Cart-product">
+                            <div class="Cart-block Cart-block_row">
+                                <div class="Cart-block Cart-block_pict">
+                                    <a class="Cart-pict" href="{{ link_product_detail }}">
+                                        {% if product.product_image.all|length > 0 %}
+                                            <img class="Cart-img" src="{% get_media_prefix %}{{ product.product_image.all.0.image }}" alt="{{ product.title }}"/>
+                                        {% else %}
+                                            {% trans "Нет изображения" %}
+                                        {% endif %}
+                                    </a>
+                                </div>
+                                <div class="Cart-block Cart-block_info">
+                                    <a class="Cart-title" href="{{ link_product_detail }}">
+                                        {{ product.title }}
+                                    </a>
+                                    <div class="Cart-desc">
+                                        {{ product.description|safe }}
+                                    </div>
+                                </div>
+                                <div class="Cart-block Cart-block_price">
+                                    <div class="Cart-price">
+                                        {{ item.price|floatformat:2 }}$
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Cart-block Cart-block_row">
+                                <div class="Cart-block Cart-block_amount">
+                                    {{ item.quantity }} шт.
+                                </div>
+                            </div>
+                        </div>
+                    {% endwith %}
+                {% endfor %}
+            {% else %}
+                <header class="Section-header Section-header_product">
+                    <h3 class="Section-title">
+                        {% trans "Корзина пуста" %}
+                    </h3>
+                </header>
+            {% endif %}
+
+            <header class="Section-header Section-header_product">
+                <h3 class="Section-title">
+                    {% trans "Стоимость доставки" %}
+                </h3>
+            </header>
+
+            <div class="Cart Cart_order">
+                <div class="Cart-product">
+                    <div class="Cart-block Cart-block_row">
+                        <div class="Cart-block Cart-block_info font-weight-bolder" id="delivery_title">
+                            {% include 'general/system/preloader.html' %}
+                        </div>
+                        <div class="form-error" id="delivery_description">
+                            {% include 'general/system/preloader.html' %}
+                        </div>
+                    </div>
+                    <div class="Cart-block Cart-block_row">
+                        <div class="Cart-block Cart-block_amount" id="delivery_price">
+                            {% include 'general/system/preloader.html' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Cart-total">
+                <div class="Cart-block Cart-block_total">
+                    <strong class="Cart-title">{% trans "Итого" %}:
+                    </strong><span class="Cart-price" id="total-price" data-totalprice="{{ cart.get_total_price }}">{{ cart.get_total_price|floatformat:2 }}$</span>
+                </div>
+                <div class="Cart-block">
+                    <button class="btn btn_primary btn_lg" type="submit" onclick="createOrder()">{% trans "Оплатить" %}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

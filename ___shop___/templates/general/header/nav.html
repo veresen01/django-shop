@@ -1,0 +1,34 @@
+{% load i18n %}
+{% load static %}
+<div class="row-block Header-logo">
+    <a class="logo" href="{% url 'shop:index' %}">
+        <img
+                class="logo-image"
+                src="{% get_static_prefix %}assets/img/logo.png"
+                alt="logo.png"/>
+    </a>
+</div>
+<nav class="row-block row-block_right Header-menu">
+    <div class="menuModal" id="navigate">
+        <ul class="menu menu_main">
+            <li class="menu-item">
+                <a class="menu-link" href="{% url 'shop:index' %}">{% trans "Главная" %}</a>
+            </li>
+
+            <li class="menu-item">
+                <a class="menu-link" href="{% url 'shop:catalog' %}">{% trans "Каталог" %}</a>
+            </li>
+
+            {% if request.user.is_superuser %}
+                <li class="menu-item">
+                    <a class="menu-link" href="/admin" target="_blank">{% trans "Админка" %}</a>
+                </li>
+
+                <li class="menu-item">
+                    <a class="menu-link" href="/rosetta/files/project/"
+                       target="_blank">Rosetta</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

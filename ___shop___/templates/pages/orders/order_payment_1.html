@@ -1,0 +1,16 @@
+{% load i18n %}
+<form class="form Payment" action="{% url 'orders:order_payment_process' %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="order" value="{{ order.id }}">
+    <div class="Payment-card">
+        <div class="form-group">
+            <label class="form-label">
+                {% trans "Номер карты" %}
+            </label>
+            <input class="form-input Payment-bill" id="id_card_number" name="id_card_number" type="text" placeholder="9999 9999" data-mask="9999 9999" data-validate="require number pay"/>
+        </div>
+    </div>
+    <div class="Payment-pay">
+        <button id="button_order_payment" class="btn btn_primary" type="submit" disabled>Оплатить</button>
+    </div>
+</form>

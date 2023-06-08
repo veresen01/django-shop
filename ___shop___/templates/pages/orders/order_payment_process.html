@@ -1,0 +1,28 @@
+{% extends 'base_template/base_template.html' %}
+{% load i18n %}
+{% load random_numbers %}
+{% block content %}
+    {% if error %}
+        <header class="Section-header Section-header_product">
+            <h3 class="Section-title">
+                {{ error }}
+            </h3>
+        </header>
+    {% else %}
+        <div class="ProgressPayment">
+            <div class="ProgressPayment-title">
+                {% trans "Ждем подтверждения оплаты платежной системой" %}
+            </div>
+            <div class="ProgressPayment-icon">
+                <div class="cssload-thecube">
+                    <div class="cssload-cube cssload-c1"></div>
+                    <div class="cssload-cube cssload-c2"></div>
+                    <div class="cssload-cube cssload-c4"></div>
+                    <div class="cssload-cube cssload-c3"></div>
+                </div>
+            </div>
+        </div>
+        <meta http-equiv="refresh" content="{% random_int 3 8 %}; url={% url 'orders:order_detail' order.id %}">
+    {% endif %}
+
+{% endblock %}

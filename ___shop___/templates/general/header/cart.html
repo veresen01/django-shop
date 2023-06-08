@@ -1,0 +1,14 @@
+{% load static %}
+<div class="row-block">
+    <div class="CartBlock">
+        <a class="CartBlock-block" href="{% url 'cart:cart' %}">
+            <img class="CartBlock-img"
+                 src="{% get_static_prefix %}assets/img/icons/cart.svg"
+                 alt="cart.svg"/>
+            <span class="CartBlock-amount">{{ total_items }}</span>
+        </a>
+        <div class="CartBlock-block">
+            <span class="CartBlock-price">{{ total_price|floatformat:2 }}$</span>
+        </div>
+    </div>
+</div>

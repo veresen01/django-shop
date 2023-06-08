@@ -1,0 +1,20 @@
+{% load i18n %}
+{% load static %}
+<div class="Section Section_column Section_columnDesktop"  >
+    <div class="wrap">
+        <div class="Section-content">
+            <header class="Section-header">
+                <h2 class="Section-title">{% trans "Популярные продукты" %}
+                </h2>
+            </header>
+            <div class="Cards">
+                {% for product in popular_products %}
+                    {% include 'general/catalog/catalog_product.html' %}
+                {% empty %}
+                    {% trans "Нет популярных товаров" %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>

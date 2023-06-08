@@ -1,0 +1,31 @@
+{% load i18n %}
+{% load static %}
+<div class="BannersHome">
+    {% for favourite_category in favourite_categories %}
+        <a class="BannersHomeBlock" href="{% url 'shop:catalog_category' favourite_category.id %}">
+            <div class="BannersHomeBlock-row">
+                <div class="BannersHomeBlock-block">
+                    <strong class="BannersHomeBlock-title">
+                        {{ favourite_category.title }}
+                    </strong>
+                    <div class="BannersHomeBlock-content">
+                        from&#32;<span class="BannersHomeBlock-price">
+                                ${{ favourite_category.get_min|floatformat:2 }}
+                        </span>
+                    </div>
+                </div>
+                <div class="BannersHomeBlock-block">
+                    <div class="BannersHomeBlock-img">
+                        {% if favourite_category.image %}
+                            <img src="{% get_media_prefix %}{{ favourite_category.image }}" alt="{{ favourite_category.title }}"/>
+                        {% else %}
+                            {% trans "Нет изображения" %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </a>
+    {% empty %}
+        {% trans "Нет избранных категорий" %}
+    {% endfor %}
+</div>

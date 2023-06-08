@@ -1,0 +1,23 @@
+{% load i18n %}
+
+{% if request.user.is_authenticated %}
+    <nav class="row-block">
+        <div class="row ControlPanel-rowSplit">
+            <div class="row-block">
+                <a class="ControlPanel-title" href="{% url 'users:account' %}">{{ request.user.email }}</a>
+                &nbsp;/&nbsp;
+                <a class="ControlPanel-title" href="{% url 'users:logout' %}">{% trans "Выход" %}</a>
+            </div>
+        </div>
+    </nav>
+{% else %}
+    <nav class="row-block">
+        <div class="row ControlPanel-rowSplit">
+            <div class="row-block">
+                <a class="ControlPanel-title" href="{% url 'users:login' %}">{% trans "Авторизация" %}</a>
+                &nbsp;/&nbsp;
+                <a class="ControlPanel-title" href="{% url 'users:signup' %}">{% trans "Регистрация" %}</a>
+            </div>
+        </div>
+    </nav>
+{% endif %}

@@ -1,0 +1,224 @@
+# Create your views here.
+from django.db import connection
+from django.http import HttpRequest
+from django.utils.translation import gettext_lazy as _
+from django.views import generic
+from loguru import logger
+
+from app_product.models import AttributeName
+from app_product.models import AttributeValue
+from app_product.models import Category
+from app_product.models import Product
+from app_product.models import PropertyName
+from app_product.models import PropertyValue
+from app_settings.models import SiteSettings
+from app_shop.utils import get_range_price
+from app_shop.utils import isint
+
+granted_sorts = (
+    'sold_amount',  # популярности
+    'add_at',  # новизне
+    'price',  # цене
+    'product_comments',  # количеству отзывов
+)
+granted_sort_dirs = (
+    '',
+    '-'
+)
+
+
+class ShopIndexView(generic.TemplateView):
+    template_name = 'pages/shop/shop.html'
+    page_description = _('Главная страница магазина')
+    
+    def get_context_data(self, **kwargs):
+        settings: SiteSettings = SiteSettings.load()
+        
+        context = super().get_context_data(**kwargs)
+        
+        favourite_categories: Category = Category.objects.filter(
+            favourite=True
+        )
+        
+        popular_products: Product = Product.objects.filter(active=True).order_by('-sold_amount')[
+                                    :settings.popular_product_amount]
+        limited_products: Product = Product.objects.filter(
+            active=True,
+            limited_edition=True
+        ).order_by('price')
+        
+        context['page_description'] = self.page_description
+        context['favourite_categories'] = favourite_categories
+        context['popular_products'] = popular_products
+        context['limited_products'] = limited_products
+        return context
+
+
+class CatalogView(generic.ListView):
+    template_name = 'pages/shop/catalog.html'
+    model = Product
+    page_title = _('Каталог')
+    page_description = _('Каталог товаров')
+    context_object_name = 'products_list'
+    
+    sort = None
+    sort_dir = None
+    price = None
+    price_min = None
+    price_max = None
+    property = ''
+    property_values = ''
+    attribute = ''
+    attribute_values = ''
+    title = ''
+    is_stock = ''
+    category = None
+    sort_query = ''
+    category_link = ''
+    page_sort = ''
+    
+    def get(self, request: HttpRequest, *args, **kwargs):
+        settings: SiteSettings = SiteSettings.load()
+        self.paginate_by = 2
+        if settings.product_page_amount:
+            self.paginate_by = settings.product_page_amount
+        return super().get(request, *args, **kwargs)
+    
+    def get_queryset(self):
+        self.sort = self.request.GET.get('sort', 'sold_amount')
+        self.sort_dir = self.request.GET.get('sort_dir', '-')
+        self.price = self.request.GET.get('price', '-')
+        self.title = self.request.GET.get('title', '')
+        self.is_stock = self.request.GET.get('is_stock', '')
+        self.property = self.request.GET.get('property', '')
+        self.property_values = self.request.GET.get('property_values', '')
+        self.attribute = self.request.GET.get('attribute', '')
+        self.attribute_values = self.request.GET.get('attribute_values', '')
+        
+        if len(self.price) > 0:
+            price_data = self.price.split(';')
+            print(f'{price_data=}')
+            if len(price_data) == 2:
+                self.price_min = price_data[0]
+                self.price_max = price_data[1]
+        
+        if self.price_min:
+            if len(self.price_min) > 0:
+                if isint(self.price_min):
+                    self.price_min = int(self.price_min)
+        
+        if self.price_max:
+            if len(self.price_max) > 0:
+                if isint(self.price_max):
+                    self.price_max = int(self.price_max)
+        
+        if self.sort not in granted_sorts:
+            self.sort = 'sold_amount'
+        if self.sort_dir not in granted_sort_dirs:
+            self.sort_dir = '-'
+        
+        sort_query = f'{self.sort_dir}{self.sort}'
+        
+        self.page_sort = f'&sort={self.sort}&sort_dir={self.sort_dir}'
+        
+        queryset = super(CatalogView, self).get_queryset()
+        queryset = queryset.filter(
+            active=True
+        )
+        
+        category_id = self.kwargs.get('category_id', 0)
+        if category_id:
+            
+            self.category: Category = Category.objects.filter(pk=category_id)
+            if self.category.exists():
+                self.category = self.category.first()
+                self.category_link = f'{self.category.id}'
+                print(f'{self.category=}')
+                
+                queryset = queryset.filter(
+                    category=self.category
+                )
+        else:
+            self.category_link = ''
+        
+        if isint(self.price_min) and isint(self.price_max):
+            logger.info('Применяю фильтр "разброс цен"')
+            self.sort_query += f'&price={self.price}'
+            queryset = queryset.filter(
+                price__gte=self.price_min,
+                price__lte=self.price_max
+            )
+        
+        if self.is_stock == "on":
+            logger.info('Применяю фильтр "в наличии"')
+            self.sort_query += f'&is_stock=on'
+            queryset = queryset.filter(
+                remains__gt=0
+            )
+        
+        if len(self.title) > 0:
+            # self.title = self.title.encode(encoding='UTF-8', errors='strict')
+            logger.info(f'Применяю фильтр "по названию": {self.title}')
+            self.sort_query += f'&title={self.title}'
+            queryset = queryset.filter(
+                # title__iregex='[[:<:]]{}[[:>:]]'.format(self.title)
+                title__icontains=self.title
+            )
+        
+        if len(self.property) > 0:
+            if len(self.property_values) > 0:
+                # Product.objects.filter(product_property__value__value=)
+                self.sort_query += f'&property={self.property}'
+                self.sort_query += f'&property_values={self.property_values}'
+                queryset = queryset.filter(
+                    product_property__property__name=self.property,
+                    product_property__value__value=self.property_values
+                )
+        
+        if len(self.attribute) > 0:
+            if len(self.attribute_values) > 0:
+                # Product.objects.filter(product_attributes__value__value=)
+                self.sort_query += f'&attribute={self.attribute}'
+                self.sort_query += f'&attribute_values={self.attribute_values}'
+                queryset = queryset.filter(
+                    product_attributes__attribute__name=self.attribute,
+                    product_attributes__value__value=self.attribute
+                )
+        
+        if len(sort_query) > 0:
+            logger.info(f'Применяю сортировку "{sort_query}"')
+            queryset = queryset.order_by(sort_query)
+        print(f'{queryset=}')
+        
+        print(connection.queries)
+        return queryset
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        price_range = get_range_price(self.category)
+        # price_range = get_range_price()
+        
+        # print(f'{price_range=}')
+        
+        properties: PropertyName = PropertyName.objects.all()
+        property_values: PropertyValue = PropertyValue.objects.all()
+        attributes: AttributeName = AttributeName.objects.all()
+        attribute_values: AttributeValue = AttributeValue.objects.all()
+        
+        context['page_title'] = self.page_title
+        context['page_description'] = self.page_description
+        context['price_range'] = price_range
+        context['price_min'] = self.price_min or price_range['min_price']
+        context['price_max'] = self.price_max or price_range['max_price']
+        context['sort'] = self.sort
+        context['category_link'] = self.category_link
+        context['sort_query'] = self.sort_query
+        context['sort_dir'] = self.sort_dir
+        context['page_sort'] = self.page_sort
+        context['properties'] = properties
+        context['property_values'] = property_values
+        context['attributes'] = attributes
+        context['attribute_values'] = attribute_values
+        context['section_column'] = " Section_column Section_columnLeft"
+        return context

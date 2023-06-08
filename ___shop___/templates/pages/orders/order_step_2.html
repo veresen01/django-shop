@@ -1,0 +1,66 @@
+{% load i18n %}
+<div class="Order-block" id="step2">
+    <header class="Section-header Section-header_sm">
+        <h2 class="Section-title">{{ html_step }} 2. {{ html_step_2 }}
+        </h2>
+    </header>
+    <form action="" method="post" class="form" id="step_2_form">
+        <div class="form-group">
+{#            {% for delivery in deliveries %}#}
+{#                {% trans delivery.title as delivery_title %}#}
+{#                <div>#}
+{#                    <label class="toggle">#}
+{#                        <input type="radio" name="delivery" id="id_delivery_{{ delivery.id }}" value="{{ delivery.id }}" {% if forloop.first %}checked="checked"{% endif %}/>#}
+{#                        <span class="toggle-box"></span>#}
+{#                        <span class="toggle-text">{{ delivery_title }}</span>#}
+{#                    </label>#}
+{#                    <div class="text-muted small">#}
+{#                        {{ delivery.description }}#}
+{#                    </div>#}
+{#                </div>#}
+{#            {% empty %}#}
+{#                {% trans "Способы доставки недоступны" %}#}
+{#            {% endfor %}#}
+            <div>
+                <label class="toggle">
+                    <input type="radio" name="delivery" id="id_delivery_1" value="1" checked="checked" data-value="{% trans "Обычная доставка" %}"/>
+                    <span class="toggle-box"></span>
+                    <span class="toggle-text">{% trans "Обычная доставка" %}</span>
+                </label>
+                <div class="text-muted small">
+{#                    {{ settings }}#}
+{#                    {{ settings.order_delivery_limit }}#}
+                    {% blocktranslate with order_delivery_limit=settings.order_delivery_limit order_delivery_price=settings.order_delivery_price %}Доставка бесплатная, если сумма заказа от {{ order_delivery_limit }}$. Если сумма заказа меньше, то стоимость доставки {{ order_delivery_price }}$.{% endblocktranslate %}
+                </div>
+            </div>
+
+            <div>
+                <label class="toggle">
+                    <input type="radio" name="delivery" id="id_delivery_2" value="2" data-value="{% trans "Экспресс-доставка" %}"/>
+                    <span class="toggle-box"></span>
+                    <span class="toggle-text">{% trans "Экспресс-доставка" %}</span>
+                </label>
+                <div class="text-muted small">
+                    {% blocktranslate with order_delivery_express=settings.order_delivery_express %}Любая сумма заказа. Стоимость {{ order_delivery_express }}${% endblocktranslate %}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="id_city">
+                {% trans "Город" %}
+            </label>
+            <input class="form-input" id="id_city" name="city" type="text" required/>
+            <div class="form-error show-me-pls">{% trans "Заполните город" %}</div>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="id_address">
+                {% trans "Адрес" %}
+            </label>
+            <textarea class="form-textarea" name="address" id="id_address" required></textarea>
+            <div class="form-error show-me-pls">{% trans "Заполните адрес" %}</div>
+        </div>
+        <div class="Order-footer">
+            <a id="btn_to_step_3" class="btn btn_success Order-next" data-href="#step3" href="#step3">{% trans "Дальше" %}</a>
+        </div>
+    </form>
+</div>

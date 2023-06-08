@@ -1,0 +1,40 @@
+{% load i18n %}
+<div class="Section-column">
+    <div class="Section-columnSection">
+        <header class="Section-header">
+            <strong class="Section-title">
+                {% trans "Навигация" %}
+            </strong>
+        </header>
+        <div class="Section-columnContent">
+            <div class="NavigateProfile">
+                <ul class="menu menu_vt">
+                    {% url 'users:account' as link_navigation %}
+                    <li class="{% if request.path == link_navigation %}menu-item_ACTIVE{% endif %} menu-item">
+                        <a class="menu-link" href="{{ link_navigation }}">
+                            {% trans "Личный кабинет" %}
+                        </a>
+                    </li>
+                    {% url 'users:profile' as link_navigation %}
+                    <li class="{% if request.path == link_navigation %}menu-item_ACTIVE{% endif %} menu-item">
+                        <a class="menu-link" href="{{ link_navigation }}">
+                            {% trans "Профиль" %}
+                        </a>
+                    </li>
+                    {% url 'users:history_orders' as link_navigation %}
+                    <li class="{% if request.path == link_navigation %}menu-item_ACTIVE{% endif %} menu-item">
+                        <a class="menu-link" href="{{ link_navigation }}">
+                            {% trans "История заказов" %}
+                        </a>
+                    </li>
+                    {% url 'users:history_products' as link_navigation %}
+                    <li class="{% if request.path == link_navigation %}menu-item_ACTIVE{% endif %} menu-item">
+                        <a class="menu-link" href="{{ link_navigation }}">
+                            {% trans "История просмотра" %}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

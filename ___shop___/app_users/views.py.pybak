@@ -1,0 +1,303 @@
+# Create your views here.
+from random import randint
+
+from django.contrib.auth import authenticate
+from django.contrib.auth import login
+from django.contrib.auth import views
+from django.contrib.auth.models import User
+from django.db import transaction
+from django.http import HttpRequest
+from django.shortcuts import redirect
+from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
+from django.views import generic
+
+from app_orders.models import Order
+from app_users.forms import RegForm
+from app_users.forms import UpdateProfileForm
+# from app_users.models import Profile
+from app_users.utils import save_avatar
+from app_users.validators import clear_phone
+
+
+class MyLoginView(views.LoginView):
+    template_name = 'pages/account/login.html'
+    page_title = _('Авторизация')
+    page_description = _('Авторизация')
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['page_title'] = self.page_title
+        context['page_description'] = self.page_description
+        return context
+
+
+class SignUpView(generic.TemplateView):
+    template_name = 'pages/account/signup.html'
+    page_title = _('Регистрация')
+    page_description = _('Регистрация')
+    num1 = randint(1, 10)
+    num2 = randint(1, 10)
+    summa = num1 + num2
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        self.request.session['summa'] = self.summa
+        context['num1'] = self.num1
+        context['num2'] = self.num2
+        
+        reg_form = RegForm()
+        
+        context['reg_form'] = reg_form
+        context['page_title'] = self.page_title
+        context['page_description'] = self.page_description
+        return context
+    
+    def post(self, request: HttpRequest, *args, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        self.request.session['summa'] = self.summa
+        context['num1'] = self.num1
+        context['num2'] = self.num2
+        
+        context['page_title'] = self.page_title
+        context['page_description'] = self.page_description
+        
+        reg_form = RegForm(request.POST)
+        
+        if reg_form.is_valid():
+            captcha: str = reg_form.cleaned_data.get('captcha')
+            captcha_session = request.session.get('summa')
+            
+            if not captcha.isdigit():
+                reg_form.add_error('captcha', _('Решение должно быть числом!'))
+            else:
+                captcha: int = int(captcha)
+                if captcha == captcha_session:
+                    email = reg_form.cleaned_data.get('email')
+                    exists_email: User = User.objects.filter(
+                        email=email
+                    )
+                    if exists_email.exists():
+                        reg_form.add_error('email', _('Такая почта уже зарегистрирована!'))
+                    else:
+                        phone = reg_form.cleaned_data.get('phone')
+                        phone = clear_phone(phone)
+                        exists_phone: Profile = Profile.objects.filter(
+                            phone=phone
+                        )
+                        if exists_phone.exists():
+                            reg_form.add_error('phone', _('Такой телефон уже зарегистрирован!'))
+                        else:
+                            with transaction.atomic():
+                                username = reg_form.cleaned_data.get('username')
+                                password = reg_form.cleaned_data.get('password1')
+                                
+                                new_user: User = reg_form.save()
+                                new_user.set_password(password)
+                                new_user.save()
+                                
+                                new_profile: Profile = Profile.objects.create(
+                                    user=new_user,
+                                    phone=phone
+                                )
+                                new_profile.save()
+                                
+                                save_avatar(request, 'avatar_file', new_profile, f'avatar_{new_user.id}')
+                                
+                                user = authenticate(username=username, password=password)
+                                login(request, user)
+                            
+                            return redirect(reverse('shop:index'))
+                
+                else:
+                    reg_form.add_error('captcha', _('Капча решена неверно!'))
+        
+        context['reg_form'] = reg_form
+        
+        return self.render_to_response(context=context)
+
+
+class AccountView(generic.TemplateView):
+    template_name = 'pages/account/account.html'
+    page_title = _('Личный кабинет')
+    page_description = _('Личный кабинет')
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['page_title'] = self.page_title
+        context['page_description'] = self.page_description
+        context['section_column'] = " Section_column Section_columnLeft"
+        return context
+
+
+class ProfileView(generic.TemplateView):
+    template_name = 'pages/account/profile.html'
+    page_title = _('Профиль')
+    page_description = _('Профиль')
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        user = User.objects.get(pk=self.request.user.id)
+        
+        print(user)
+        
+        profile_form = UpdateProfileForm(
+            initial={
+                'phone': user.profile.phone,
+                'full_name': f'{user.first_name} {user.last_name}',
+                'email': user.email,
+            }
+        )
+        
+        context['page_title'] = self.page_title
+        context['profile_form'] = profile_form
+        context['page_description'] = self.page_description
+        context['section_column'] = " Section_column Section_columnLeft"
+        return context
+    
+    def post(self, request: HttpRequest, *args, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        context['page_title'] = self.page_title
+        context['page_description'] = self.page_description
+        
+        profile_form = UpdateProfileForm(request.POST)
+        
+        if profile_form.is_valid():
+            password1 = profile_form.cleaned_data.get('password1')
+            password2 = profile_form.cleaned_data.get('password2')
+            go_next = False
+            if len(password1):
+                if password1 != password2:
+                    profile_form.add_error('password2', _('Пароли должны совпадать'))
+                else:
+                    request.user.set_password(password1)
+                    request.user.save()
+                    user = authenticate(username=request.user.username, password=password1)
+                    login(request, user)
+                    go_next = True
+            else:
+                go_next = True
+            
+            if go_next:
+                go_next = False
+                full_name: str = profile_form.cleaned_data.get('full_name')
+                full_name_data = full_name.split(maxsplit=2)
+                if len(full_name_data) >= 2:
+                    first_name = full_name_data[0]
+                    last_name = full_name_data[1]
+                    go_next = True
+                else:
+                    profile_form.add_error('full_name', _('Вы должны ввести имя и фамилию'))
+            
+            if go_next:
+                go_next = False
+                phone = profile_form.cleaned_data.get('phone')
+                phone = clear_phone(phone)
+                exists_phone: Profile = Profile.objects.filter(
+                    phone=phone
+                ).exclude(
+                    user=request.user
+                )
+                if exists_phone.exists():
+                    profile_form.add_error('phone', _('Такой телефон уже зарегистрирован!'))
+                else:
+                    go_next = True
+            
+            if go_next:
+                go_next = False
+                email = profile_form.cleaned_data.get('email')
+                exists_email: User = User.objects.filter(
+                    email=email
+                ).exclude(
+                    id=request.user.id
+                )
+                if exists_email.exists():
+                    profile_form.add_error('email', _('Такая почта уже зарегистрирована!'))
+                else:
+                    go_next = True
+            
+            if go_next:
+                request.user.first_name = first_name
+                request.user.last_name = last_name
+                request.user.email = email
+                request.user.profile.phone = phone
+                request.user.save()
+                request.user.profile.save()
+                
+                save_avatar(request, 'avatar_file', request.user.profile, f'avatar_{request.user.id}')
+                
+                context['success'] = True
+        
+        context['profile_form'] = profile_form
+        context['section_column'] = " Section_column Section_columnLeft"
+        
+        return self.render_to_response(context=context)
+
+
+class HistoryOrdersListView(generic.ListView):
+    template_name = 'pages/account/history_orders.html'
+    page_title = _('История заказов')
+    page_description = _('История заказов')
+    model = Order
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['page_title'] = self.page_title
+        context['page_description'] = self.page_description
+        context['section_column'] = " Section_column Section_columnLeft"
+        return context
+
+
+class HistoryProductsListView(generic.ListView):
+    template_name = 'pages/account/history_products.html'
+    page_title = _('История просмотров')
+    page_description = _('История просмотров')
+    model = Order
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['page_title'] = self.page_title
+        context['page_description'] = self.page_description
+        context['section_column'] = " Section_column Section_columnLeft"
+        return context
+
+
+class LogOutView(views.LogoutView):
+    template_name = 'general/auth/logout.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        logout_page_data = self.request.META['HTTP_REFERER']
+        host_data: str = self.request.META['HTTP_HOST']
+        
+        logout_page_arr: list = logout_page_data.split(host_data + '/')
+        
+        if len(logout_page_arr) >= 2:
+            logout_page = logout_page_arr[1]
+        else:
+            logout_page = '/'
+        
+        context['logout_page'] = logout_page
+        
+        return context
+
+
+class RecoveryView(generic.TemplateView):
+    template_name = 'pages/account/recovery.html'
+    page_title = _('Восстановление доступа')
+    page_description = _('Восстановление доступа')
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        # reg_form = RegForm()
+        
+        # context['reg_form'] = reg_form
+        context['page_title'] = self.page_title
+        context['page_description'] = self.page_description
+        return context

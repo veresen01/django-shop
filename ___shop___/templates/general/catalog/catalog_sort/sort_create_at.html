@@ -1,0 +1,16 @@
+{% load i18n %}
+{% if sort|length > 0 and sort == "add_at" %}
+    {% if sort_dir|length > 0 %}
+        <a class="Sort-sortBy Sort-sortBy_dec" href="{% url 'shop:catalog' %}{{ category_link }}?sort=add_at&sort_dir={{ sort_query }}">
+            {% trans "Новизне" %}
+        </a>
+    {% else %}
+        <a class="Sort-sortBy Sort-sortBy_inc" href="{% url 'shop:catalog' %}{{ category_link }}?sort=add_at&sort_dir=-{{ sort_query }}">
+            {% trans "Новизне" %}
+        </a>
+    {% endif %}
+{% else %}
+    <a class="Sort-sortBy" href="{% url 'shop:catalog' %}{{ category_link }}?sort=add_at&sort_dir={{ sort_query }}">
+        {% trans "Новизне" %}
+    </a>
+{% endif %}

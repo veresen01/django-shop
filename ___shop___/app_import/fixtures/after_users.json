@@ -1,0 +1,174 @@
+[
+  {
+    "model": "auth.group",
+    "fields": {
+      "name": "Пользователи",
+      "permissions": []
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "rz4qooe93m7g3561pej9pnhmviw28s4j",
+    "fields": {
+      "session_data": ".eJxVjDsOgzAQBe_iOrK8a_ACZfqcwVr_YpIIJGwqxN0DEkXSvpk3m7C81mzXEhc7BjEIELffzbF_x-kE4cXTc5Z-nuoyOnkq8qJFPuYQP_fL_QtkLvl4a_ahb43RKSaHyETgDDFrhK43ZHTTIHcpqASKKKICAxoSetUykscj6nmpYtj2_QsJQzpK:1pECJ5:Mun8jxt9EFw8jvVuFCydgLwExvbBmzSlE5d1Bsv4Xao",
+      "expire_date": "2023-01-21T16:44:31.774Z"
+    }
+  },
+  {
+    "model": "app_users.user",
+    "fields": {
+      "password": "pbkdf2_sha256$390000$3BZ2sgHHrguKz6RRB0Ng3I$HXb89MdM6MYRLhg9uu02HXSfXkMNVIB87Ne3SK8guDI=",
+      "last_login": "2023-01-07T16:41:53Z",
+      "is_superuser": true,
+      "email": "megano@megano.com",
+      "full_name": "Админский Админ",
+      "date_joined": "2023-01-07T16:39:43.154Z",
+      "is_active": true,
+      "avatar_file": "images/user_avatars/Без_названия_pgDAtVn.jpg",
+      "phoneNumber": "8005553535",
+      "is_staff": true,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "app_users.user",
+    "fields": {
+      "password": "pbkdf2_sha256$390000$MUarwrOTY3bj1uDEMbulCc$dQM8zp7+/i+kM6egvAu3Xr+zwbuv6Zbh2tgY4zIX7oc=",
+      "last_login": "2023-01-07T16:41:43Z",
+      "is_superuser": false,
+      "email": "endocrinologist@ya.ru",
+      "full_name": "Alex Woldren",
+      "date_joined": "2023-01-07T16:41:43.169Z",
+      "is_active": true,
+      "avatar_file": "images/user_avatars/django_tests_XmQBlgE.jpg",
+      "phoneNumber": "9055556565",
+      "is_staff": false,
+      "groups": [
+        [
+          "Пользователи"
+        ]
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "app_settings.sitesettings",
+    "pk": 1,
+    "fields": {
+      "order_delivery_limit": 2000,
+      "order_delivery_price": 200,
+      "order_delivery_express": 500,
+      "access_to_auth_when_auth": true,
+      "avatar_image_max_size_mb": 2.0
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2023-01-07T16:42:03.005Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_users",
+        "proxygroups"
+      ],
+      "object_id": "1",
+      "object_repr": "Пользователи",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2023-01-07T16:42:09.062Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_users",
+        "user"
+      ],
+      "object_id": "2",
+      "object_repr": "endocrinologist@ya.ru (Alex Woldren)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2023-01-07T16:42:35.224Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_users",
+        "user"
+      ],
+      "object_id": "1",
+      "object_repr": "megano@megano.com (Админский Админ)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u043e\\u043b\\u043d\\u043e\\u0435 \\u0438\\u043c\\u044f\", \"\\u0422\\u0435\\u043b\\u0435\\u0444\\u043e\\u043d\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2023-01-07T16:44:11.630Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_settings",
+        "sitesettings"
+      ],
+      "object_id": "1",
+      "object_repr": "SiteSettings object (1)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2023-01-07T16:44:21.437Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_users",
+        "user"
+      ],
+      "object_id": "1",
+      "object_repr": "megano@megano.com (Админский Админ)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0410\\u0432\\u0430\\u0442\\u0430\\u0440\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2023-01-07T16:44:29.339Z",
+      "user": [
+        "megano@megano.com"
+      ],
+      "content_type": [
+        "app_users",
+        "user"
+      ],
+      "object_id": "2",
+      "object_repr": "endocrinologist@ya.ru (Alex Woldren)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0410\\u0432\\u0430\\u0442\\u0430\\u0440\"]}}]"
+    }
+  }
+]

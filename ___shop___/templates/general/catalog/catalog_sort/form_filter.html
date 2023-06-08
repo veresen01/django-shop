@@ -1,0 +1,6 @@
+{% if request.GET.sort %}
+    <input type="hidden" name="sort" value="{{ request.GET.sort }}">
+{% endif %}
+{% if request.GET.sort_dir %}
+    <input type="hidden" name="sort" value="{{ request.GET.sort_dir }}">
+{% endif %}

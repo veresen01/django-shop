@@ -1,0 +1,97 @@
+{% extends 'base_template/base_template.html' %}
+{% load i18n %}
+{% block content %}
+    {% if request.user.is_authenticated %}
+        {% include 'general/account/navigation.html' %}
+        <div class="Section-content">
+            <div class="Profile">
+                <form class="form Profile-form" action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="row-block">
+
+                            <div class="form-group">
+                                <label class="form-label" for="{{ form.avatar.id_for_label }}">{% trans "Аватар" %}:
+                                </label>
+                                <div class="Profile-avatar {% if not request.user.avatar_file %}Profile-avatar_noimg{% endif %}">
+                                    <div class="Profile-img">
+                                        {% include 'general/avatar/avatar.html' with user_object=request.user %}
+                                    </div>
+                                    <label class="Profile-fileLabel" for="avatar">
+                                        {% trans "Выберите аватар" %}
+                                    </label>
+                                    {{ form.avatar_file }}
+                                    {% include 'general/errors/form_error.html' with errors=form.avatar_file.errors %}
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="name">
+                                    {% trans "Полное имя" %}:
+                                </label>
+                                {{ form.full_name }}
+                                {% include 'general/errors/form_error.html' with errors=form.full_name.errors %}
+                            </div>
+
+                        </div>
+                        <div class="row-block">
+
+                            <div class="form-group">
+                                <label class="form-label" for="phone">
+                                    {% trans "Телефон" %}:
+                                </label>
+                                {{ form.phoneNumber }}
+                                {% include 'general/errors/form_error.html' with errors=form.phoneNumber.errors %}
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="{{ form.email.id_for_label }}">
+                                    E-mail:
+                                </label>
+                                {{ form.email }}
+                                {% include 'general/errors/form_error.html' with errors=form.email.errors %}
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="{{ form.password1.id_for_label }}">
+                                    {% trans "Измените пароль, если нужно" %}
+                                </label>
+                                {{ form.password1 }}
+                                {% include 'general/errors/form_error.html' with errors=form.password1.errors %}
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="{{ form.password1.id_for_label }}">
+                                    {% trans "Повторите новый пароль" %}
+                                </label>
+                                {{ form.password2 }}
+                                {% include 'general/errors/form_error.html' with errors=form.password2.errors %}
+                            </div>
+                            <div class="form-group">
+                                <div class="Profile-btn">
+                                    <button class="btn btn_success" type="submit">
+                                        {% trans "Сохранить" %}
+                                    </button>
+                                </div>
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        <div class="Profile-success">
+                                            {{ message }}
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    {% else %}
+        <header class="Section-header">
+            <h3 class="Section-title">{% trans "Пока отзывов нет" %}
+            </h3>
+        </header>
+    {% endif %}
+
+{% endblock %}

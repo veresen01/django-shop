@@ -1,0 +1,41 @@
+{% load i18n %}
+{% load static %}
+<div class="Pagination">
+    <div class="Pagination-ins">
+        <a class="Pagination-element Pagination-element_prev" href="{{ category_link }}?page=1{{ sort_query }}{{ page_sort }}" title="{% trans "Первая страница" %}">
+            <img src="{% static 'assets/img/icons/prevPagination.svg'%}" alt="{% trans "Первая страница" %}"/>
+        </a>
+        {% if page_obj.has_previous %}
+            {% with page_num=page_obj.previous_page_number|add:-1 %}
+                {% if page_num > 0 %}
+                    <a class="Pagination-element" href="{{ category_link }}?page={{ page_num }}{{ sort_query }}{{ page_sort }}">
+                        <span class="Pagination-text">{{ page_num }}</span>
+                    </a>
+                {% endif %}
+            {% endwith %}
+            <a class="Pagination-element" href="{{ category_link }}?page={{ page_obj.previous_page_number }}{{ sort_query }}{{ page_sort }}">
+                <span class="Pagination-text">{{ page_obj.previous_page_number }}</span>
+            </a>
+        {% endif %}
+
+        <span class="Pagination-element Pagination-element_current">
+            <span class="Pagination-text">{{ page_obj.number }}</span>
+        </span>
+
+        {% if page_obj.has_next %}
+            <a class="Pagination-element" href="{{ category_link }}?page={{ page_obj.next_page_number }}{{ sort_query }}{{ page_sort }}">
+                <span class="Pagination-text">{{ page_obj.next_page_number }}</span>
+            </a>
+            {% with page_num=page_obj.next_page_number|add:1 %}
+                {% if page_num <= page_obj.paginator.num_pages %}
+                    <a class="Pagination-element" href="{{ category_link }}?page={{ page_num }}{{ sort_query }}{{ page_sort }}">
+                        <span class="Pagination-text">{{ page_num }}</span>
+                    </a>
+                {% endif %}
+            {% endwith %}
+        {% endif %}
+        <a class="Pagination-element Pagination-element_prev" title="" href="{{ category_link }}?page={{ page_obj.paginator.num_pages }}{{ sort_query }}{{ page_sort }}">
+            <img src="{% static 'assets/img/icons/nextPagination.svg'%}" alt="{% trans "Последняя страница" %}"/>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+{% load static %}
+{% load i18n %}
+<div class="ControlPanel">
+    <div class="wrap">
+        <div class="row ControlPanel-row">
+            <div class="row-block">
+                <div class="row ControlPanel-rowSplit">
+                    <div class="row-block"><a class="ControlPanel-title"
+                                              href="#">{% trans "Бесплатная доставка" %}</a>
+                    </div>
+                    <div class="row-block hide_700"><span
+                            class="ControlPanel-title">{% trans "Мы в соцсетях" %}</span>
+                        <ul class="menu menu_img menu_smallImg ControlPanel-menu">
+                            <li class="menu-item"><a class="menu-link" href="#"><img
+                                    src="{% get_static_prefix %}assets/img/icons/socialHeader/fb.svg" alt="fb.svg"/></a>
+                            </li>
+                            <li class="menu-item"><a class="menu-link" href="#"><img
+                                    src="{% get_static_prefix %}assets/img/icons/socialHeader/tw.svg" alt="tw.svg"/></a>
+                            </li>
+                            <li class="menu-item"><a class="menu-link" href="#"><img
+                                    src="{% get_static_prefix %}assets/img/icons/socialHeader/in.svg" alt="in.svg"/></a>
+                            </li>
+                            <li class="menu-item"><a class="menu-link" href="#"><img
+                                    src="{% get_static_prefix %}assets/img/icons/socialHeader/pt.svg" alt="pt.svg"/></a>
+                            </li>
+                            <li class="menu-item"><a class="menu-link" href="#"><img
+                                    src="{% get_static_prefix %}assets/img/icons/socialHeader/mail.svg"
+                                    alt="mail.svg"/></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% include 'general/auth/auth.html' %}
+        </div>
+    </div>
+    <!--+div.menuModal#navigate
+        //    +menu([
+        //        ['Главная','{% url 'shop:index' %}'],
+        //        ['Портфолио','{% url 'shop:index' %}'],
+        //        ['Мои проекты','{% url 'shop:index' %}'],
+        //        ['Контакты','{% url 'shop:index' %}']
+        //    ], page === 'article'? 'Портфолио': 'Главная')._main
+
+        block
+        -->
+</div>

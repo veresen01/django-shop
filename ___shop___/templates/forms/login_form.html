@@ -1,0 +1,13 @@
+{% load i18n %}
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <div class="form-group total-center">
+        <button class="btn btn_primary margin-auto">{% trans "Авторизация" %}</button>
+    </div>
+</form>
+<hr>
+<a class="ControlPanel-title" href="{% url 'users:signup' %}">{% trans "У меня нет аккаунта" %}</a>
+<hr>
+<a class="ControlPanel-title" href="{% url 'users:recovery' %}">{% trans "Забыли пароль?" %}</a>

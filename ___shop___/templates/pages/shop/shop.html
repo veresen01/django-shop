@@ -1,0 +1,18 @@
+{% extends 'base_template/base_template.html' %}
+{% block content %}
+{#    123123#}
+{#    {{ settings.order_delivery_limit }}#}
+{#    <hr>#}
+{#    {{ settings.order_delivery_price }}#}
+{#    <hr>#}
+{#    {{ settings.order_delivery_express }}#}
+{#    {{ profile.phone }}#}
+    {% include 'general/shop/favourite_categories.html' %}
+    {% include 'general/shop/popular_products.html' %}
+    <div class="Section Section_column Section_columnRight">
+        <div class="wrap">
+            {% include 'general/shop/shipping.html' %}
+            {% include 'general/shop/limited_edition.html' %}
+        </div>
+    </div>
+{% endblock %}

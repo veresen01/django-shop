@@ -1,0 +1,18 @@
+{% extends 'base_template/base_template.html' %}
+{% load i18n %}
+{% block content %}
+    {% include 'general/account/navigation.html' %}
+    <div class="Section-content">
+        <div class="Cards">
+            {% for history in products_list %}
+                {% with product=history.product %}
+                    {% include 'general/catalog/catalog_product.html' %}
+                {% endwith %}
+
+            {% empty %}
+                {% trans "Товаров нет" %}
+            {% endfor %}
+        </div>
+        {% include 'general/catalog/pagination.html' %}
+    </div>
+{% endblock %}

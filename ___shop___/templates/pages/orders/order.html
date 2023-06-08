@@ -1,0 +1,25 @@
+{% extends 'base_template/base_template.html' %}
+{% load i18n %}
+{% block content %}
+    {% if cart.get_total_price > 0 %}
+        {% trans "Шаг" as html_step %}
+        {% trans "Параметры пользователя" as html_step_1 %}
+        {% trans "Способ доставки" as html_step_2 %}
+        {% trans "Способ оплаты" as html_step_3 %}
+        {% trans "Подтверждение заказа" as html_step_4 %}
+        {% include 'pages/orders/order_progress.html' %}
+        <div class="Section-content">
+            {% include 'pages/orders/order_step_1.html' %}
+            {% include 'pages/orders/order_step_2.html' %}
+            {% include 'pages/orders/order_step_3.html' %}
+            {% include 'pages/orders/order_step_4.html' %}
+        </div>
+    {% else %}
+        <header class="Section-header">
+            <h3 class="Section-title">
+                {% trans "Оплата невозможна, Ваша корзина пуста" %}
+            </h3>
+        </header>
+    {% endif %}
+
+{% endblock %}
